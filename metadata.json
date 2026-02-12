@@ -1,0 +1,7 @@
+{
+  "name": "Squareoff InvestTech",
+  "description": "Premium financial services and investment advisory firm serving clients in India and Canada.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
