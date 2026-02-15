@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Linkedin, Instagram } from 'lucide-react';
 import { Logo } from '../ui/Logo';
+import algoryxLogo from '../../assets/Algoryx.jpeg';
 
 export const Footer: React.FC = () => {
   return (
@@ -63,8 +64,16 @@ export const Footer: React.FC = () => {
             {/* Locations (Simplified) */}
             <div>
                  <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-500 text-xs">Presence</h4>
-                 <p className="text-2xl font-serif">India <span className="text-neutral-700 mx-2 text-xl font-sans font-light">|</span> Canada</p>
+                 <p className="text-2xl font-serif">India</p>
             </div>
+        </div>
+
+        {/* AlgoStrategic & AI Partner */}
+        <div className="border-t border-white/10 pt-10 pb-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-neutral-500">
+            <span className="text-sm">Our AlgoStrategic and AI partner</span>
+            <a href="https://algoryx.io" target="_blank" rel="noopener noreferrer" className="inline-block focus:outline-none focus:ring-2 focus:ring-white/20 rounded">
+                <img src={algoryxLogo} alt="ALGORYX.io" className="h-8 w-auto object-contain" />
+            </a>
         </div>
 
         {/* Disclaimer Section */}

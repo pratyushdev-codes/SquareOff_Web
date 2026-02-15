@@ -47,7 +47,7 @@ export const Home: React.FC = () => {
               <span className="text-neutral-500">Portfolio</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-lg md:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
-              We bridge the gap between retail ambition and institutional discipline. Serving clients across India and Canada with premium advisory and automated strategies.
+              We bridge the gap between retail ambition and institutional discipline. Serving clients across India with premium advisory and automated strategies.
             </motion.p>
             <motion.div variants={fadeInUp} className="pt-8 flex flex-col md:flex-row items-center justify-center gap-4">
               <NavLink to="/start-investing">
@@ -101,7 +101,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="flex flex-col justify-center h-full">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif">From Traders <br/>to <span className="text-neutral-500">InvestTech</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif">From Traders <br/>to <span className="text-neutral-500"><span className="text-green-500">I</span>nvest<span className="text-red-500">T</span>ech</span></h2>
               <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-6 leading-relaxed">
                 Formerly known as Squareoff Traders, we have evolved. Our journey began on the trading floor, executing high-frequency strategies. Today, as Squareoff InvestTech, we bring that same execution precision to long-term wealth creation.
               </p>

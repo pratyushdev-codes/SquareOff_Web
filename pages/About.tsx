@@ -45,7 +45,7 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <span className="text-neutral-500 uppercase tracking-[0.2em] text-sm mb-4 block">Our Journey</span>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8">From Traders to InvestTech</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8">From Traders to <span className="text-green-500">I</span>nvest<span className="text-red-500">T</span>ech</h2>
               <div className="space-y-6 text-neutral-400 text-lg leading-relaxed">
                 <p>
                   Squareoff Traders began as a venture led by a founder exploring the markets without formal boundaries. It was a period of intense learning, testing hypotheses, and understanding the raw mechanics of market movements.
@@ -58,13 +58,13 @@ export const About: React.FC = () => {
                 </p>
               </div>
             </div>
-            <div className="relative h-auto min-h-[400px] w-full bg-neutral-800 overflow-hidden rounded-sm border border-white/10">
+         
               <img
-                src="https://m.media-amazon.com/images/I/81Tw9BQBbdL._AC_UF894,1000_QL80_.jpg"
+                src="../assets/Timeline.jpeg"
                 alt="technical-chart"
-                className="object-cover w-full h-full"
+                className="object-contain w-full h-full min-h-[700px]"
               />
-            </div>
+      
           </div>
         </div>
       </section>
@@ -176,7 +176,7 @@ export const About: React.FC = () => {
                 {/* Main Image Container */}
                 <div className="aspect-[3/4] w-full overflow-hidden rounded-sm bg-neutral-100 relative z-10 shadow-xl">
                   <img
-                    src="../assets/varun.jpeg"
+                    src="../assets"
                     alt="Varun Pandya"
                     className="w-full h-full object-cover object-top"
                     onError={(e) => {
