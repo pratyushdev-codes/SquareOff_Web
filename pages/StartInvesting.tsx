@@ -3,6 +3,7 @@ import { Button } from '../components/ui/Button';
 import { UserPlus, ShieldCheck, FileText, Target, Wallet, Zap, BarChart2, ArrowRight, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
+import { AnimateSection } from '../components/AnimateSection';
 
 const steps = [
   {
@@ -82,6 +83,7 @@ export const StartInvesting: React.FC = () => {
       </div>
 
       {/* The Process Timeline */}
+      <AnimateSection>
       <section className="py-24 border-t border-white/10">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="mb-16 text-center">
@@ -123,8 +125,10 @@ export const StartInvesting: React.FC = () => {
           </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* Paid Consultation Block */}
+      <AnimateSection>
       <section className="py-24 bg-white text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -159,8 +163,10 @@ export const StartInvesting: React.FC = () => {
           </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* Final CTA */}
+      <AnimateSection>
       <section className="py-24 bg-neutral-900 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-6">Ready to professionalize your portfolio?</h2>
@@ -177,6 +183,7 @@ export const StartInvesting: React.FC = () => {
           </p>
         </div>
       </section>
+      </AnimateSection>
 
     </div>
   );

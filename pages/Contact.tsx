@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '../components/ui/Button';
 import { MapPin, Mail, CheckCircle, Phone, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AnimateSection } from '../components/AnimateSection';
 
 export const Contact: React.FC = () => {
     const [formState, setFormState] = useState({ name: '', email: '', phone: '', country: '', message: '' });
@@ -24,6 +25,7 @@ export const Contact: React.FC = () => {
     return (
         <div className="pt-24 bg-black text-white min-h-screen">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+                <AnimateSection>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
                     {/* Info Side */}
                     <div>
@@ -202,6 +204,7 @@ export const Contact: React.FC = () => {
                         </AnimatePresence>
                     </div>
                 </div>
+                </AnimateSection>
             </div>
         </div>
     );

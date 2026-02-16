@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Eye, Shield, TrendingUp, Anchor } from 'lucide-react';
+import { AnimateSection } from '../components/AnimateSection';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -40,6 +41,7 @@ export const About: React.FC = () => {
       </div>
 
       {/* The Evolution Story */}
+      <AnimateSection>
       <section className="py-24 bg-neutral-900/50 border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -68,8 +70,10 @@ export const About: React.FC = () => {
           </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* Mission & Vision */}
+      <AnimateSection>
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -101,8 +105,10 @@ export const About: React.FC = () => {
           </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* Core Values */}
+      <AnimateSection>
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-3xl font-serif font-bold mb-12 border-b border-white/10 pb-6">Core Values</h2>
@@ -139,11 +145,13 @@ export const About: React.FC = () => {
           </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* Founder Profile */}
+      <AnimateSection>
       <section className="py-24 bg-white text-black mt-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="gap-16 items-center">
             {/* Left Column: Text */}
             <div className="order-2 lg:order-1">
               <div className="mb-12">
@@ -171,27 +179,11 @@ export const About: React.FC = () => {
             </div>
 
             {/* Right Column: Image */}
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md">
-                {/* Main Image Container */}
-                <div className="aspect-[3/4] w-full overflow-hidden rounded-sm bg-neutral-100 relative z-10 shadow-xl">
-                  <img
-                    src="../assets"
-                    alt="Varun Pandya"
-                    className="w-full h-full object-cover object-top"
-                    onError={(e) => {
-                      // Fallback for demo purposes if image isn't local
-                      e.currentTarget.src = "https://images.unsplash.com/";
-                    }}
-                  />
-                </div>
-                {/* Decorative border offset */}
-                <div className="absolute -z-10 top-6 -right-6 w-full h-full border-2 border-neutral-200 rounded-sm"></div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
+      </AnimateSection>
     </div>
   );
 };

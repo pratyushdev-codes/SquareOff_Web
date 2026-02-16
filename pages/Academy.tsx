@@ -3,6 +3,7 @@ import { BookOpen, Clock, Monitor, Users, TrendingUp, Target, Shield, Zap, Insta
 import { Button } from '../components/ui/Button';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { AnimateSection } from '../components/AnimateSection';
 
 const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -51,6 +52,7 @@ export const Academy: React.FC = () => {
             </div>
 
             {/* About The Academy */}
+            <AnimateSection>
             <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
@@ -66,17 +68,19 @@ export const Academy: React.FC = () => {
                             "Dedicated to providing the knowledge and tools needed for success in the dynamic world of trading."
                         </p>
                     </div>
-                    <div className="bg-neutral-100 p-8 rounded-lg border border-neutral-200">
+                    <div className="p-8 rounded-lg border border-neutral-200">
                         <img
-                            src="https://www.interactivebrokers.com/images/web/tws-hero-updated.jpg"
+                            src="../assets/tradecraft-logo.png.jpeg"
                             alt="Technical Charts"
                             className="w-full h-auto rounded shadow-sm opacity-90"
                         />
                     </div>
                 </div>
             </section>
+            </AnimateSection>
 
             {/* Why Join Us? */}
+            <AnimateSection>
             <section className="py-24 bg-neutral-950 text-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -126,8 +130,10 @@ export const Academy: React.FC = () => {
                     </div>
                 </div>
             </section>
+            </AnimateSection>
 
             {/* What We Offer */}
+            <AnimateSection>
             <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div>
@@ -223,6 +229,7 @@ export const Academy: React.FC = () => {
                     </div>
                 </div>
             </section>
+            </AnimateSection>
         </div>
     );
 };

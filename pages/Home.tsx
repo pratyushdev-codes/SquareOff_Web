@@ -4,6 +4,7 @@ import { ArrowRight, TrendingUp, Shield, Globe } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { motion } from 'framer-motion';
 import { MarketFeed } from '../components/MarketFeed';
+import { AnimateSection } from '../components/AnimateSection';
 import backgroundImage from '../assets/background 3.jpg';
 
 const fadeInUp = {
@@ -62,6 +63,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Value Proposition */}
+      <AnimateSection>
       <section className="py-24 bg-neutral-100 dark:bg-white text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -95,8 +97,10 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* Introduction */}
+      <AnimateSection>
       <section className="py-32 border-t border-neutral-200 dark:border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -128,8 +132,10 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* CTA */}
+      <AnimateSection>
       <section className="py-24 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black dark:text-white">Ready to professionalize your portfolio?</h2>
@@ -139,6 +145,7 @@ export const Home: React.FC = () => {
           </NavLink>
         </div>
       </section>
+      </AnimateSection>
     </div>
   );
 };

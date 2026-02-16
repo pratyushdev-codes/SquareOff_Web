@@ -3,6 +3,7 @@ import { LineChart, ShieldCheck, Briefcase, Compass, Landmark, ArrowRight } from
 import { Button } from '../components/ui/Button';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { AnimateSection } from '../components/AnimateSection';
 
 import tradecraftLogo from '../assets/tradecraft-logo.png.jpeg';
 
@@ -68,6 +69,7 @@ export const Services: React.FC = () => {
         </motion.div>
 
         {/* Services Grid */}
+        <AnimateSection>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
           {services.map((service, index) => (
             <motion.div
@@ -103,8 +105,10 @@ export const Services: React.FC = () => {
             </NavLink>
           </div>
         </div>
+        </AnimateSection>
 
         {/* Academy Promo */}
+        <AnimateSection>
         <div className="relative rounded-sm overflow-hidden border border-white/10">
           <div className="absolute inset-0 bg-neutral-900">
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
@@ -121,10 +125,11 @@ export const Services: React.FC = () => {
               </NavLink>
             </div>
             <div className="flex items-center justify-center">
-              <img src={tradecraftLogo} alt="TradeCraft Academy Logo" className="w-full max-w-md object-contain drop-shadow-2xl" />
+              <img src={tradecraftLogo} alt="TradeCraft Academy Logo" className="w-full max-w-md object-contain drop-shadow-2xl rounded-xl" />
             </div>
           </div>
         </div>
+        </AnimateSection>
       </div>
     </div>
   );

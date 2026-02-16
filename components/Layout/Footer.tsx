@@ -17,27 +17,6 @@ export const Footer: React.FC = () => {
                 <div className="flex flex-col items-start">
                     <Logo variant="footer" />
                 </div>
-
-                <div className="flex space-x-6 pt-4 pl-1">
-                    <a 
-                        href="https://www.linkedin.com/company/squareoff-investtech/" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-neutral-400 hover:text-white transition-colors"
-                        aria-label="LinkedIn"
-                    >
-                        <Linkedin size={24} strokeWidth={1.5} />
-                    </a>
-                    <a 
-                        href="https://www.instagram.com/squareoffinvesttech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-neutral-400 hover:text-white transition-colors"
-                        aria-label="Instagram"
-                    >
-                        <Instagram size={24} strokeWidth={1.5} />
-                    </a>
-                </div>
             </div>
 
             {/* Navigation Grid */}
@@ -64,7 +43,7 @@ export const Footer: React.FC = () => {
             {/* Locations (Simplified) */}
             <div>
                  <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-500 text-xs">Presence</h4>
-                 <p className="text-2xl font-serif">India</p>
+                 <p className="text-2xl font-serif">India | Canada</p>
             </div>
         </div>
 
@@ -73,6 +52,28 @@ export const Footer: React.FC = () => {
             <span className="text-sm">Our AlgoStrategic and AI partner</span>
             <a href="https://algoryx.io" target="_blank" rel="noopener noreferrer" className="inline-block focus:outline-none focus:ring-2 focus:ring-white/20 rounded">
                 <img src={algoryxLogo} alt="ALGORYX.io" className="h-8 w-auto object-contain" />
+            </a>
+        </div>
+
+        {/* Social Icons - Centered */}
+        <div className="flex justify-center items-center gap-6 pb-10">
+            <a 
+                href="https://www.linkedin.com/company/squareoff-investtech/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-neutral-400 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+            >
+                <Linkedin size={24} strokeWidth={1.5} />
+            </a>
+            <a 
+                href="https://www.instagram.com/squareoffinvesttech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-neutral-400 hover:text-white transition-colors"
+                aria-label="Instagram"
+            >
+                <Instagram size={24} strokeWidth={1.5} />
             </a>
         </div>
 

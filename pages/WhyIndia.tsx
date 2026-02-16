@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { TrendingUp, Users, Smartphone, Globe, ArrowRight, BarChart3, Building2, Coins, PieChart } from 'lucide-react';
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
+import { AnimateSection } from '../components/AnimateSection';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -66,6 +67,7 @@ export const WhyIndia: React.FC = () => {
       </div>
 
       {/* Key Statistics - Enhanced Animated Cards */}
+      <AnimateSection>
       <section className="bg-neutral-50 text-black py-24 border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -145,8 +147,10 @@ export const WhyIndia: React.FC = () => {
             </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* Detailed Analysis Content Blocks */}
+      <AnimateSection>
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-24">
             
@@ -216,8 +220,10 @@ export const WhyIndia: React.FC = () => {
             </div>
         </div>
       </section>
+      </AnimateSection>
 
       {/* Strategic Advantage for Global Investors */}
+      <AnimateSection>
       <section className="bg-neutral-900 py-24 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <Globe className="w-16 h-16 text-white mx-auto mb-8" />
@@ -248,6 +254,7 @@ export const WhyIndia: React.FC = () => {
             </NavLink>
         </div>
       </section>
+      </AnimateSection>
 
     </div>
   );
