@@ -14,6 +14,60 @@ import { StartInvesting } from './pages/StartInvesting';
 import { NotFound } from './pages/NotFound';
 import { Chatbot } from './components/Chatbot';
 
+// Cursor image from public/ — path works for root and subpath deployments
+const CURSOR_SRC = (() => {
+  const base = typeof import.meta.env !== 'undefined' && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/';
+  const path = base.endsWith('/') ? base + 'cursorChart-32.png' : base + '/cursorChart-32.png';
+  return path;
+})();
+
+const CustomCursor: React.FC = () => {
+  const [pos, setPos] = React.useState({ x: 0, y: 0 });
+  const [visible, setVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const move = (e: MouseEvent) => {
+      setPos({ x: e.clientX, y: e.clientY });
+      if (!visible) setVisible(true);
+    };
+    const leave = () => setVisible(false);
+    const enter = () => setVisible(true);
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseleave', leave);
+    document.addEventListener('mouseenter', enter);
+    return () => {
+      document.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseleave', leave);
+      document.removeEventListener('mouseenter', enter);
+    };
+  }, [visible]);
+
+  if (!visible) return null;
+  return (
+    <div
+      className="fixed pointer-events-none z-[9999]"
+      style={{
+        left: pos.x,
+        top: pos.y,
+        width: 32,
+        height: 32,
+        marginLeft: -16,
+        marginTop: -16,
+      }}
+      aria-hidden
+    >
+      <img
+        src={CURSOR_SRC}
+        alt=""
+        width={32}
+        height={32}
+        className="w-full h-full object-contain"
+        style={{ display: 'block' }}
+      />
+    </div>
+  );
+};
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -24,9 +78,21 @@ const ScrollToTop = () => {
   return null;
 };
 
+const MOBILE_BREAKPOINT = 768;
+
 const ParallaxMain: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isMobile, setIsMobile] = React.useState(false);
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, (v) => v * 0.22);
+
+  React.useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
+    setIsMobile(mq.matches);
+    const handler = () => setIsMobile(mq.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const y = useTransform(scrollY, (v) => (isMobile ? 0 : v * 0.22));
   return <motion.div style={{ y }}>{children}</motion.div>;
 };
 
@@ -35,6 +101,7 @@ const App: React.FC = () => {
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
+        <CustomCursor />
         <Navbar />
         <main className="flex-grow">
           <ParallaxMain>
