@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-500 ${
+      className={`fixed w-full z-[9998] transition-all duration-500 ${
         scrolled 
           ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md py-4 border-b border-neutral-200 dark:border-white/5 text-black dark:text-white shadow-sm dark:shadow-none' 
           : 'bg-transparent py-6 text-white dark:text-white' // Keep transparent nav text white on hero images usually
@@ -87,30 +87,46 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - full viewport, above all content */}
       <div
-        className={`fixed inset-0 bg-white dark:bg-black z-40 transition-transform duration-500 ease-in-out md:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 z-[9999] md:hidden transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
-        style={{ top: '80px' }}
+        aria-hidden={!isOpen}
       >
-        <div className="flex flex-col p-8 space-y-6 text-black dark:text-white">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `text-2xl font-light ${isActive ? 'font-medium' : 'opacity-70'}`
-              }
-            >
-              {item.label}
+        {/* Backdrop - covers entire screen so content is not visible/clickable */}
+        <div
+          className="absolute inset-0 bg-white dark:bg-black"
+          onClick={() => setIsOpen(false)}
+        />
+        {/* Menu panel - same content, with close button inside overlay */}
+        <div className="relative flex flex-col h-full w-full p-8 pt-24 text-black dark:text-white">
+          <button
+            className="absolute top-6 right-6 p-2 -m-2"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+          <div className="flex flex-col space-y-6">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `text-2xl font-light ${isActive ? 'font-medium' : 'opacity-70'}`
+                }
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            <div className="h-px bg-neutral-200 dark:bg-neutral-800 my-4" />
+            <NavLink to="/contact" className="text-xl" onClick={() => setIsOpen(false)}>Contact Us</NavLink>
+            <NavLink to="/start-investing" className="flex items-center text-xl" onClick={() => setIsOpen(false)}>
+              Start Investing <ArrowRight className="ml-2 w-5 h-5" />
             </NavLink>
-          ))}
-          <div className="h-px bg-neutral-200 dark:bg-neutral-800 my-4" />
-          <NavLink to="/contact" className="text-xl">Contact Us</NavLink>
-          <NavLink to="/start-investing" className="flex items-center text-xl">
-            Start Investing <ArrowRight className="ml-2 w-5 h-5" />
-          </NavLink>
+          </div>
         </div>
       </div>
     </nav>

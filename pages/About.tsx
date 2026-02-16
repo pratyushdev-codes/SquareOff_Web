@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Eye, Shield, TrendingUp, Anchor } from 'lucide-react';
 import { AnimateSection } from '../components/AnimateSection';
+import timelineImage from '../assets/Timeline.jpeg';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -62,7 +63,7 @@ export const About: React.FC = () => {
             </div>
          
               <img
-                src="../assets/Timeline.jpeg"
+                src={timelineImage}
                 alt="technical-chart"
                 className="object-contain w-full h-full min-h-[700px]"
               />

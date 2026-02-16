@@ -4,6 +4,7 @@ import { Button } from '../components/ui/Button';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { AnimateSection } from '../components/AnimateSection';
+import tradecraftLogoImage from '../assets/tradecraft-logo.png.jpeg';
 
 const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -70,7 +71,7 @@ export const Academy: React.FC = () => {
                     </div>
                     <div className="p-8 rounded-lg border border-neutral-200">
                         <img
-                            src="../assets/tradecraft-logo.png.jpeg"
+                            src={tradecraftLogoImage}
                             alt="Technical Charts"
                             className="w-full h-auto rounded shadow-sm opacity-90"
                         />

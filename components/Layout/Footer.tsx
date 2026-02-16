@@ -6,62 +6,60 @@ import algoryxLogo from '../../assets/Algoryx.jpeg';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white pt-20 pb-10 border-t border-white/10">
+    <footer className="relative z-10 bg-black text-white pt-20 pb-10 border-t border-white/10 min-h-[320px]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
-        {/* Top Section: Brand + Links + Locations */}
-        <div className="flex flex-col md:flex-row justify-between items-start mb-20 gap-12">
+        {/* Top Section: Brand + Links + Locations — matches reference layout */}
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 mb-16">
             
-            {/* Brand Logo Section */}
-            <div className="space-y-6 max-w-xs">
-                <div className="flex flex-col items-start">
-                    <Logo variant="footer" />
-                </div>
+            {/* Brand — logo + name only (no social here) */}
+            <div className="flex items-center shrink-0">
+                <Logo variant="footer" />
             </div>
 
-            {/* Navigation Grid */}
-            <div className="grid grid-cols-2 gap-x-16 gap-y-4 text-sm">
+            {/* EXPLORE + CONNECT — two columns */}
+            <div className="grid grid-cols-2 gap-x-16 gap-y-0 text-sm">
                 <div>
-                    <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-500 text-xs">Explore</h4>
+                    <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-400 text-xs">Explore</h4>
                     <ul className="space-y-4">
-                        <li><NavLink to="/" className="text-neutral-400 hover:text-white transition-colors">Home</NavLink></li>
-                        <li><NavLink to="/about" className="text-neutral-400 hover:text-white transition-colors">About Us</NavLink></li>
-                        <li><NavLink to="/services" className="text-neutral-400 hover:text-white transition-colors">Services</NavLink></li>
-                        <li><NavLink to="/why-india" className="text-neutral-400 hover:text-white transition-colors">Why India</NavLink></li>
+                        <li><NavLink to="/" className="text-white hover:text-neutral-300 transition-colors">Home</NavLink></li>
+                        <li><NavLink to="/about" className="text-white hover:text-neutral-300 transition-colors">About Us</NavLink></li>
+                        <li><NavLink to="/services" className="text-white hover:text-neutral-300 transition-colors">Services</NavLink></li>
+                        <li><NavLink to="/why-india" className="text-white hover:text-neutral-300 transition-colors">Why India</NavLink></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-500 text-xs">Connect</h4>
+                    <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-400 text-xs">Connect</h4>
                     <ul className="space-y-4">
-                        <li><NavLink to="/academy" className="text-neutral-400 hover:text-white transition-colors">TradeCraft</NavLink></li>
-                        <li><NavLink to="/contact" className="text-neutral-400 hover:text-white transition-colors">Contact</NavLink></li>
-                        <li><NavLink to="/start-investing" className="text-neutral-400 hover:text-white transition-colors">Start Investing</NavLink></li>
+                        <li><NavLink to="/academy" className="text-white hover:text-neutral-300 transition-colors">TradeCraft</NavLink></li>
+                        <li><NavLink to="/contact" className="text-white hover:text-neutral-300 transition-colors">Contact</NavLink></li>
+                        <li><NavLink to="/start-investing" className="text-white hover:text-neutral-300 transition-colors">Start Investing</NavLink></li>
                     </ul>
                 </div>
             </div>
 
-            {/* Locations (Simplified) */}
-            <div>
-                 <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-500 text-xs">Presence</h4>
-                 <p className="text-2xl font-serif">India | Canada</p>
+            {/* PRESENCE — India | Canada prominent */}
+            <div className="shrink-0">
+                <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-400 text-xs">Presence</h4>
+                <p className="text-2xl md:text-3xl font-serif text-white">India | Canada</p>
             </div>
         </div>
 
-        {/* AlgoStrategic & AI Partner */}
-        <div className="border-t border-white/10 pt-10 pb-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-neutral-500">
+        {/* Divider + AlgoStrategic & AI Partner — centered */}
+        <div className="border-t border-white/10 pt-10 pb-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-neutral-400">
             <span className="text-sm">Our AlgoStrategic and AI partner</span>
             <a href="https://algoryx.io" target="_blank" rel="noopener noreferrer" className="inline-block focus:outline-none focus:ring-2 focus:ring-white/20 rounded">
-                <img src={algoryxLogo} alt="ALGORYX.io" className="h-8 w-auto object-contain" />
+                <img src={algoryxLogo} alt="ALGORYX.io" className="h-8 w-auto object-contain rounded-xl" />
             </a>
         </div>
 
-        {/* Social Icons - Centered */}
-        <div className="flex justify-center items-center gap-6 pb-10">
+        {/* Divider + Social Icons — centered at bottom only */}
+        <div className="border-t border-white/10 pt-10 flex justify-center items-center gap-6 pb-4">
             <a 
                 href="https://www.linkedin.com/company/squareoff-investtech/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-neutral-400 hover:text-white transition-colors"
+                className="text-white/80 hover:text-white transition-colors"
                 aria-label="LinkedIn"
             >
                 <Linkedin size={24} strokeWidth={1.5} />
@@ -70,7 +68,7 @@ export const Footer: React.FC = () => {
                 href="https://www.instagram.com/squareoffinvesttech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-neutral-400 hover:text-white transition-colors"
+                className="text-white/80 hover:text-white transition-colors"
                 aria-label="Instagram"
             >
                 <Instagram size={24} strokeWidth={1.5} />

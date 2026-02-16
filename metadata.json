@@ -1,7 +1,44 @@
 {
   "name": "Squareoff InvestTech",
-  "description": "Premium financial services and investment advisory firm serving clients in India.",
-  "requestFramePermissions": [
-    "microphone"
-  ]
+  "title": "Squareoff InvestTech | Institutional-Grade Investment Advisory & Wealth Management",
+  "description": "Premium investment advisory and wealth management firm serving India and Canada. Data-driven strategies, portfolio management, risk analysis, and TradeCraft Academy. From traders to InvestTech—discipline, transparency, long-term growth.",
+  "keywords": [
+    "investment advisory India",
+    "wealth management",
+    "portfolio management",
+    "Indian equities",
+    "NRI investment",
+    "Canada India investment",
+    "Squareoff InvestTech",
+    "TradeCraft Academy",
+    "financial advisory",
+    "risk management",
+    "algorithmic investing",
+    "Mumbai Toronto wealth",
+    "start investing",
+    "Varun Pandya"
+  ],
+  "url": "",
+  "locale": "en_IN",
+  "ogImage": "/assets/sitelogo.jpeg",
+  "organization": {
+    "name": "Squareoff InvestTech",
+    "tagline": "Where Smart Money Begins.",
+    "founded": "2021",
+    "presence": ["India", "Canada"],
+    "locations": {
+      "india": "Ahmedabad, Mumbai",
+      "canada": "Toronto"
+    }
+  },
+  "pages": [
+    { "path": "/", "title": "Home", "description": "Elevate your portfolio with institutional-grade investment and automated strategies for India and global investors." },
+    { "path": "/about", "title": "About Us", "description": "From Squareoff Traders to InvestTech—our journey, mission, vision, and founder Varun Pandya." },
+    { "path": "/services", "title": "What We Do", "description": "Investment advisory, portfolio management, risk analysis, market research, and long-term wealth planning." },
+    { "path": "/why-india", "title": "Why India", "description": "The India opportunity: structural growth, demographics, and Canada-India investment corridor." },
+    { "path": "/academy", "title": "TradeCraft Academy", "description": "Master the art of trading—price action, intraday strategies, and financial markets education." },
+    { "path": "/contact", "title": "Contact", "description": "Connect with Squareoff InvestTech advisors—India HQ and Canada office." },
+    { "path": "/start-investing", "title": "Start Investing", "description": "Begin your wealth journey with institutional-grade strategies. No minimum capital required." }
+  ],
+  "requestFramePermissions": ["microphone"]
 }

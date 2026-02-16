@@ -4,6 +4,7 @@ import { UserPlus, ShieldCheck, FileText, Target, Wallet, Zap, BarChart2, ArrowR
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { AnimateSection } from '../components/AnimateSection';
+import servicesImage from '../assets/partners.jpg';
 
 const steps = [
   {
@@ -156,7 +157,7 @@ export const StartInvesting: React.FC = () => {
                 <h3 className="text-9xl font-serif font-bold text-neutral-200">?</h3>
               </div>
               <div className="absolute inset-0 border border-black/5 m-4">
-                <img src="/assets/services.jpeg" alt="Squareoff InvestTech" className="w-full h-full object-cover" />
+                <img src={servicesImage} alt="Squareoff InvestTech" className="w-full h-full object-cover" />
 
               </div>
             </div>

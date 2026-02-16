@@ -1,6 +1,8 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Navbar } from './components/Layout/Navbar';
+import { FooterCTA } from './components/Layout/FooterCTA';
 import { Footer } from './components/Layout/Footer';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -22,6 +24,12 @@ const ScrollToTop = () => {
   return null;
 };
 
+const ParallaxMain: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, (v) => v * 0.22);
+  return <motion.div style={{ y }}>{children}</motion.div>;
+};
+
 const App: React.FC = () => {
   return (
     <Router>
@@ -29,6 +37,7 @@ const App: React.FC = () => {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
+          <ParallaxMain>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -39,8 +48,10 @@ const App: React.FC = () => {
             <Route path="/start-investing" element={<StartInvesting />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </ParallaxMain>
         </main>
         <Chatbot />
+        <FooterCTA />
         <Footer />
       </div>
     </Router>

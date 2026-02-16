@@ -1,4 +1,5 @@
 import React from 'react';
+import logoCombined from '../../assets/logoCombined.png';
 
 interface LogoProps {
   variant?: 'navbar' | 'footer';
@@ -17,7 +18,7 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'navbar', className = '' }
   return (
     <div className={`flex items-center gap-3 ${baseTextColor} ${className}`}>
       <img
-        src="/assets/logoCombined.png"
+        src={logoCombined}
         alt="Squareoff InvestTech"
         className={`shrink-0 object-contain ${sizeClasses}`}
       />
