@@ -93,7 +93,7 @@ const ParallaxMain: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   }, []);
 
   const y = useTransform(scrollY, (v) => (isMobile ? 0 : v * 0.22));
-  return <motion.div style={{ y }}>{children}</motion.div>;
+  return <motion.div style={{ y }} className="pb-[20vh] md:pb-[25vh]">{children}</motion.div>;
 };
 
 const App: React.FC = () => {
@@ -105,16 +105,16 @@ const App: React.FC = () => {
         <Navbar />
         <main className="flex-grow">
           <ParallaxMain>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/why-india" element={<WhyIndia />} />
-            <Route path="/academy" element={<Academy />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/start-investing" element={<StartInvesting />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/why-india" element={<WhyIndia />} />
+              <Route path="/academy" element={<Academy />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/start-investing" element={<StartInvesting />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </ParallaxMain>
         </main>
         <Chatbot />
