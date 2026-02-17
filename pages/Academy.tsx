@@ -59,7 +59,7 @@ export const Academy: React.FC = () => {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-serif font-bold mb-6">Welcome to TradeCraft</h2>
                         <div className="w-20 h-1 bg-black mx-auto mb-10"></div>
                         <p className="text-lg text-neutral-600 leading-relaxed mb-8">
-                            Welcome to TradeCraft Financial Markets Academy, a specialized training institute dedicated to intraday trading through pure price action strategies. The academy focuses on understanding market structure, key price levels, and strategic trade planning rather than relying on complex indicators or shortcuts. The objective is to help traders read the market with clarity and confidence.
+                            TradeCraft Financial Markets Academy, a specialized training institute dedicated to intraday trading through pure price action strategies. The academy focuses on understanding market structure, key price levels, and strategic trade planning rather than relying on complex indicators or shortcuts. The objective is to help traders read the market with clarity and confidence.
                         </p>
                         <p className="text-lg text-neutral-600 leading-relaxed mb-8">
                             TradeCraft is committed to developing structured, disciplined, and rule-based trading approaches that remove guesswork and emotional decision-making. Every strategy is built around preparation before the market opens, allowing traders to define entry, exit, and risk parameters in advance. This systematic framework helps traders approach each trading session with a clear plan.
