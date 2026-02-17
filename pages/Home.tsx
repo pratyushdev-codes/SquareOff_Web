@@ -43,11 +43,11 @@ export const Home: React.FC = () => {
             <motion.span variants={fadeInUp} className="inline-block py-1 px-3 border border-black/10 dark:border-white/20 rounded-full text-xs font-medium tracking-[0.2em] text-neutral-600 dark:text-neutral-400 uppercase">
               Institutional Grade Investment
             </motion.span>
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tight text-black dark:text-white font-serif">
+            <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[11rem] font-bold tracking-tight text-black dark:text-white font-serif">
               Elevate Your <br className="hidden md:block" />
               <span className="text-neutral-500">Portfolio</span>
             </motion.h1>
-            <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-lg md:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
+            <motion.p variants={fadeInUp} className="max-w-2xl xl:max-w-3xl mx-auto text-base sm:text-lg md:text-xl xl:text-2xl text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
               We bridge the gap between retail ambition and institutional discipline. Serving clients across India with premium advisory and automated strategies.
             </motion.p>
             <motion.div variants={fadeInUp} className="pt-8 flex flex-col md:flex-row items-center justify-center gap-4">
@@ -66,7 +66,7 @@ export const Home: React.FC = () => {
       <AnimateSection>
         <section className="py-24 bg-neutral-100 dark:bg-white text-black">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 xl:gap-16">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-black text-white flex items-center justify-center rounded-full mb-4">
                   <TrendingUp size={24} />
@@ -101,11 +101,11 @@ export const Home: React.FC = () => {
 
       {/* Introduction */}
       <AnimateSection>
-        <section className="py-32 border-t border-neutral-200 dark:border-white/10">
+        <section className="py-20 md:py-32 xl:py-40 border-t border-neutral-200 dark:border-white/10">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div className="flex flex-col justify-center h-full">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif">From Traders <br />to <span className="text-neutral-500"><span className="text-green-500">I</span>nvest<span className="text-red-500">T</span>ech</span></h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-8 font-serif">From Traders <br />to <span className="text-neutral-500"><span className="text-green-500">I</span>nvest<span className="text-red-500">T</span>ech</span></h2>
                 <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-6 leading-relaxed">
                   Formerly known as Squareoff Traders, we have evolved. Our journey began on the trading floor, executing high-frequency strategies. Today, as Squareoff InvestTech, we bring that same execution precision to long-term wealth creation.
                 </p>
@@ -125,7 +125,7 @@ export const Home: React.FC = () => {
               </div>
 
               <div className="relative">
-                <div className="aspect-[4/5] bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden border border-neutral-200 dark:border-white/10 shadow-2xl relative z-10">
+                <div className="aspect-[4/5] max-h-[500px] lg:max-h-[600px] xl:max-h-[700px] bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden border border-neutral-200 dark:border-white/10 shadow-2xl relative z-10">
                   <MarketFeed />
                 </div>
               </div>
@@ -138,7 +138,7 @@ export const Home: React.FC = () => {
       <AnimateSection>
         <section className="py-24 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-300">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black dark:text-white">Ready to professionalize your portfolio?</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold mb-6 text-black dark:text-white">Ready to professionalize your portfolio?</h2>
             <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-lg">Join a select group of investors who prioritize process over prediction.</p>
             <NavLink to="/contact">
               <Button variant="primary" size="lg">Schedule a Consultation</Button>

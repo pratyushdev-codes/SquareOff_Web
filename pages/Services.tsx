@@ -60,75 +60,75 @@ export const Services: React.FC = () => {
           variants={stagger}
           className="mb-24 border-b border-white/10 pb-16"
         >
-          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold font-serif mb-8 text-white">
+          <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-bold font-serif mb-8 text-white">
             What We Do
           </motion.h1>
-          <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-neutral-400 max-w-3xl leading-relaxed font-light">
+          <motion.p variants={fadeInUp} className="text-lg sm:text-xl md:text-2xl xl:text-2xl text-neutral-400 max-w-3xl xl:max-w-4xl leading-relaxed font-light">
             We simplify complexity. Our suite of services bridges the gap between algorithmic precision and human insight, designed to meet the diverse needs of the modern investor.
           </motion.p>
         </motion.div>
 
         {/* Services Grid */}
         <AnimateSection>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group border border-white/10 bg-neutral-950 p-10 hover:bg-neutral-900 hover:border-white/30 transition-all duration-500 flex flex-col justify-between min-h-[320px]"
-            >
-              <div>
-                <div className="mb-8 text-neutral-400 group-hover:text-white transition-colors duration-300">
-                  {service.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 xl:gap-10 mb-32">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group border border-white/10 bg-neutral-950 p-10 hover:bg-neutral-900 hover:border-white/30 transition-all duration-500 flex flex-col justify-between min-h-[320px]"
+              >
+                <div>
+                  <div className="mb-8 text-neutral-400 group-hover:text-white transition-colors duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold mb-4 group-hover:translate-x-1 transition-transform duration-300">{service.title}</h3>
+                  <p className="text-neutral-500 leading-relaxed text-sm md:text-base group-hover:text-neutral-300 transition-colors duration-300">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-serif font-bold mb-4 group-hover:translate-x-1 transition-transform duration-300">{service.title}</h3>
-                <p className="text-neutral-500 leading-relaxed text-sm md:text-base group-hover:text-neutral-300 transition-colors duration-300">
-                  {service.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
 
-          {/* CTA Card injected into grid for visual balance */}
-          <div className="border border-white/10 bg-white text-black p-10 flex flex-col justify-center items-start">
-            <h3 className="text-3xl font-serif font-bold mb-4">Ready to start?</h3>
-            <p className="text-neutral-600 mb-8">
-              Let's build a portfolio that aligns with your life goals.
-            </p>
-            <NavLink to="/contact">
-              <Button variant="secondary" className="bg-black text-white hover:bg-neutral-800">
-                Get in Touch <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </NavLink>
+            {/* CTA Card injected into grid for visual balance */}
+            <div className="border border-white/10 bg-white text-black p-10 flex flex-col justify-center items-start">
+              <h3 className="text-3xl font-serif font-bold mb-4">Ready to start?</h3>
+              <p className="text-neutral-600 mb-8">
+                Let's build a portfolio that aligns with your life goals.
+              </p>
+              <NavLink to="/contact">
+                <Button variant="secondary" className="bg-black text-white hover:bg-neutral-800">
+                  Get in Touch <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </NavLink>
+            </div>
           </div>
-        </div>
         </AnimateSection>
 
         {/* Academy Promo */}
         <AnimateSection>
-        <div className="relative rounded-sm overflow-hidden border border-white/10">
-          <div className="absolute inset-0 bg-neutral-900">
-            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
-          </div>
-          <div className="relative z-10 p-12 md:p-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-neutral-500 mb-4 block">Education First</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">TradeCraft Academy</h2>
-              <p className="text-xl text-neutral-400 mb-8 max-w-md">
-                We believe an educated investor is a better investor. Explore our deep dives into market methodologies.
-              </p>
-              <NavLink to="/academy">
-                <Button variant="outline">Explore The Academy</Button>
-              </NavLink>
+          <div className="relative rounded-sm overflow-hidden border border-white/10">
+            <div className="absolute inset-0 bg-neutral-900">
+              <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
             </div>
-            <div className="flex items-center justify-center">
-              <img src={tradecraftLogo} alt="TradeCraft Academy Logo" className="w-full max-w-md object-contain drop-shadow-2xl rounded-xl" />
+            <div className="relative z-10 p-8 sm:p-12 md:p-20 xl:p-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-neutral-500 mb-4 block">Education First</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-6 font-serif">TradeCraft Academy</h2>
+                <p className="text-xl text-neutral-400 mb-8 max-w-md">
+                  We believe an educated investor is a better investor. Explore our deep dives into market methodologies.
+                </p>
+                <NavLink to="/academy">
+                  <Button variant="outline">Explore The Academy</Button>
+                </NavLink>
+              </div>
+              <div className="flex items-center justify-center">
+                <img src={tradecraftLogo} alt="TradeCraft Academy Logo" className="w-full max-w-md object-contain drop-shadow-2xl rounded-xl" />
+              </div>
             </div>
           </div>
-        </div>
         </AnimateSection>
       </div>
     </div>

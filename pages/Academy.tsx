@@ -36,7 +36,7 @@ export const Academy: React.FC = () => {
                         <motion.span variants={fadeInUp} className="inline-block py-1 px-3 border border-white/20 rounded-full text-xs font-bold tracking-[0.2em] text-green-400 uppercase mb-6">
                             Trading Simplified!
                         </motion.span>
-                        <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold font-serif mb-6 tracking-tight">
+                        <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-bold font-serif mb-6 tracking-tight">
                             Master The Art of Trading
                         </motion.h1>
                         <motion.p variants={fadeInUp} className="text-xl text-neutral-400 max-w-2xl mx-auto mb-12 font-light">
@@ -55,8 +55,8 @@ export const Academy: React.FC = () => {
             {/* Introduction Section */}
             <AnimateSection>
                 <section className="py-24 bg-neutral-50">
-                    <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Welcome to TradeCraft</h2>
+                    <div className="max-w-4xl xl:max-w-5xl mx-auto px-6 lg:px-8 text-center">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-serif font-bold mb-6">Welcome to TradeCraft</h2>
                         <div className="w-20 h-1 bg-black mx-auto mb-10"></div>
                         <p className="text-lg text-neutral-600 leading-relaxed mb-8">
                             Welcome to TradeCraft Financial Markets Academy, a specialized training institute dedicated to intraday trading through pure price action strategies. The academy focuses on understanding market structure, key price levels, and strategic trade planning rather than relying on complex indicators or shortcuts. The objective is to help traders read the market with clarity and confidence.
@@ -76,7 +76,7 @@ export const Academy: React.FC = () => {
                 <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">About TradeCraft</h2>
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-serif font-bold mb-6">About TradeCraft</h2>
                             <div className="w-20 h-1 bg-black mb-8"></div>
                             <p className="text-lg text-neutral-600 leading-relaxed mb-6">
                                 Founded by professional trader <strong>Varun Pandya</strong>, TradeCraft Financial Markets Academy offers specialized training in intraday trading based on price action strategies.
@@ -104,21 +104,21 @@ export const Academy: React.FC = () => {
                 <section className="py-24 bg-neutral-950 text-white">
                     <div className="max-w-7xl mx-auto px-6 lg:px-8">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Why Join Us?</h2>
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-serif font-bold mb-4">Why Join Us?</h2>
                             <p className="text-neutral-400">A curriculum designed for the modern market.</p>
                         </div>
                         {/* Featured USP Card */}
-                        <div className="mb-12 bg-gradient-to-br from-red-950/40 via-neutral-900 to-neutral-900 p-10 md:p-14 border border-red-500/30 hover:border-red-500/60 transition-all duration-500 rounded-sm relative overflow-hidden">
+                        <div className="mb-12 bg-gradient-to-br from-red-950/40 via-neutral-900 to-neutral-900 p-8 sm:p-10 md:p-14 xl:p-16 border border-red-500/30 hover:border-red-500/60 transition-all duration-500 rounded-sm relative overflow-hidden">
                             <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold uppercase tracking-widest px-6 py-2">Our USP</div>
                             <Target className="w-14 h-14 text-red-500 mb-6" />
-                            <h3 className="text-3xl md:text-4xl font-bold font-serif mb-4">Exclusive "Own Levels Strategy"</h3>
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold font-serif mb-4">Exclusive "Own Levels Strategy"</h3>
                             <p className="text-neutral-300 text-lg leading-relaxed max-w-3xl">
                                 My unique levels tell me exactly when to buy, sell, and take action—all planned before the market opens. This proprietary strategy gives you a clear edge in the market with predefined entry and exit points.
                             </p>
                         </div>
 
                         {/* Other Feature Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 xl:gap-10">
                             <div className="bg-neutral-900 p-8 border border-white/10 hover:border-white/30 transition-colors">
                                 <TrendingUp className="w-10 h-10 text-green-500 mb-6" />
                                 <h3 className="text-xl font-bold mb-3">Comprehensive Price Action</h3>
@@ -158,7 +158,7 @@ export const Academy: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         <div>
                             <span className="text-neutral-500 uppercase tracking-widest text-sm font-bold mb-2 block">The Experience</span>
-                            <h2 className="text-4xl font-serif font-bold mb-8">What We Offer?</h2>
+                            <h2 className="text-3xl sm:text-4xl xl:text-5xl font-serif font-bold mb-8">What We Offer?</h2>
                             <div className="space-y-8">
                                 <div className="flex">
                                     <div className="bg-neutral-100 p-3 rounded-full h-fit mr-6">

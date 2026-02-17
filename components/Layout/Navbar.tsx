@@ -30,18 +30,17 @@ export const Navbar: React.FC = () => {
   }, [location]);
 
   return (
-    <nav 
-      className={`fixed w-full z-[9998] transition-all duration-500 ${
-        scrolled 
-          ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md py-4 border-b border-neutral-200 dark:border-white/5 text-black dark:text-white shadow-sm dark:shadow-none' 
+    <nav
+      className={`fixed w-full z-[9998] transition-all duration-500 ${scrolled
+          ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md py-4 border-b border-neutral-200 dark:border-white/5 text-black dark:text-white shadow-sm dark:shadow-none'
           : 'bg-transparent py-6 text-white dark:text-white' // Keep transparent nav text white on hero images usually
-      }`}
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 xl:px-12">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <NavLink to="/" className="group">
-             <Logo variant="navbar" className={!scrolled ? "text-white" : "text-black dark:text-white"} />
+            <Logo variant="navbar" className={!scrolled ? "text-white" : "text-black dark:text-white"} />
           </NavLink>
 
           {/* Desktop Menu */}
@@ -51,17 +50,16 @@ export const Navbar: React.FC = () => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `text-sm font-medium tracking-wide transition-colors duration-300 ${
-                    isActive 
-                      ? 'border-b pb-1 border-current' 
-                      : 'opacity-70 hover:opacity-100'
+                  `text-sm font-medium tracking-wide transition-colors duration-300 ${isActive
+                    ? 'border-b pb-1 border-current'
+                    : 'opacity-70 hover:opacity-100'
                   }`
                 }
               >
                 {item.label}
               </NavLink>
             ))}
-            
+
             <NavLink to="/contact">
               <Button variant="outline" size="sm" className={!scrolled ? "border-white/30 text-white hover:bg-white hover:text-black" : ""}>
                 Contact Us
@@ -77,11 +75,11 @@ export const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4 md:hidden">
             <button
-                className=""
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Toggle menu"
+              className=""
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
             >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -89,9 +87,8 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay - full viewport, above all content */}
       <div
-        className={`fixed inset-0 z-[9999] md:hidden transition-opacity duration-300 ${
-          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 z-[9999] md:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
         aria-hidden={!isOpen}
       >
         {/* Backdrop - covers entire screen so content is not visible/clickable */}
