@@ -86,6 +86,9 @@ export const Footer: React.FC = () => {
                 <p>5. <strong>Client Responsibility</strong> – Clients must assess their risk appetite and financial goals before investing.</p>
                 <p>6. <strong>Information Accuracy</strong> – While efforts are made to provide accurate information, the firm does not guarantee completeness or correctness of data.</p>
                 <p>7. <strong>Regulatory Compliance</strong> – Investments may be subject to applicable laws, rules, and regulations.</p>
+                <p>8. <strong>Non-SEBI Registered Entity</strong> – SquareOff InvestTech is a privately operated algorithmic software and technology company and is not registered with the Securities and Exchange Board of India (SEBI).</p>
+                <p>9. <strong>Educational & Informational Use Only</strong> – We do not provide investment advice, recommendations, or portfolio management services. All tools, algorithms, and information provided by us are for educational, research, and informational purposes only.</p>
+                <p>10. <strong>User Risk</strong> – Any trading or investment decisions made using our software are entirely at the user's own risk, and SquareOff InvestTech will not be liable for any losses or damages arising from such decisions.</p>
             </div>
         </div>
 
