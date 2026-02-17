@@ -150,7 +150,7 @@ export const About: React.FC = () => {
 
       {/* Founder Profile */}
       <AnimateSection>
-        <section className="py-24 bg-white text-black mt-16">
+        <section className="py-24 pb-40 bg-white text-black mt-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="gap-16 items-center">
               {/* Left Column: Text */}
