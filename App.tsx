@@ -93,7 +93,7 @@ const ParallaxMain: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   }, []);
 
   const y = useTransform(scrollY, (v) => (isMobile ? 0 : v * 0.22));
-  return <motion.div style={{ y }} className="pb-[20vh] md:pb-[25vh]">{children}</motion.div>;
+  return <motion.div style={{ y }}>{children}</motion.div>;
 };
 
 const App: React.FC = () => {
@@ -115,10 +115,10 @@ const App: React.FC = () => {
               <Route path="/start-investing" element={<StartInvesting />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <FooterCTA />
           </ParallaxMain>
         </main>
         <Chatbot />
-        <FooterCTA />
         <Footer />
       </div>
     </Router>
