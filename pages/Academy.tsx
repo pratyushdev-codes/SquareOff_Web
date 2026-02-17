@@ -154,8 +154,8 @@ export const Academy: React.FC = () => {
 
             {/* What We Offer */}
             <AnimateSection>
-                <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8 overflow-visible">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                         <div>
                             <span className="text-neutral-500 uppercase tracking-widest text-sm font-bold mb-2 block">The Experience</span>
                             <h2 className="text-3xl sm:text-4xl xl:text-5xl font-serif font-bold mb-8">What We Offer?</h2>

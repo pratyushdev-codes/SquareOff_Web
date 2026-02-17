@@ -42,7 +42,7 @@ export const AnimateSection: React.FC<AnimateSectionProps> = ({
     <motion.div
       ref={ref}
       data-parallax-section
-      style={{ y }}
+      style={{ y, overflow: 'visible' }}
       className={className}
     >
       <motion.div
@@ -50,6 +50,7 @@ export const AnimateSection: React.FC<AnimateSectionProps> = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-40px' }}
         transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+        style={{ overflow: 'visible' }}
       >
         {children}
       </motion.div>
