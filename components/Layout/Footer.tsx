@@ -26,12 +26,12 @@ export const Footer: React.FC = () => {
                                 <li><NavLink to="/about" className="text-white hover:text-neutral-300 transition-colors">About Us</NavLink></li>
                                 <li><NavLink to="/services" className="text-white hover:text-neutral-300 transition-colors">Services</NavLink></li>
                                 <li><NavLink to="/why-india" className="text-white hover:text-neutral-300 transition-colors">Why India</NavLink></li>
+                                <li><NavLink to="/academy" className="text-white hover:text-neutral-300 transition-colors">TradeCraft</NavLink></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="font-semibold uppercase tracking-widest mb-6 text-neutral-400 text-xs">Connect</h4>
                             <ul className="space-y-4">
-                                <li><NavLink to="/academy" className="text-white hover:text-neutral-300 transition-colors">TradeCraft</NavLink></li>
                                 <li><NavLink to="/contact" className="text-white hover:text-neutral-300 transition-colors">Contact</NavLink></li>
                                 <li><NavLink to="/start-investing" className="text-white hover:text-neutral-300 transition-colors">Start Investing</NavLink></li>
                             </ul>
