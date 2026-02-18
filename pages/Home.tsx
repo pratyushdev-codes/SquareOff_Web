@@ -134,18 +134,6 @@ export const Home: React.FC = () => {
         </section>
       </AnimateSection>
 
-      {/* CTA */}
-      <AnimateSection>
-        <section className="py-24 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-300">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold mb-6 text-black dark:text-white">Ready to professionalize your portfolio?</h2>
-            <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-lg">Join a select group of investors who prioritize process over prediction.</p>
-            <NavLink to="/contact">
-              <Button variant="primary" size="lg">Schedule a Consultation</Button>
-            </NavLink>
-          </div>
-        </section>
-      </AnimateSection>
     </div>
   );
 };
