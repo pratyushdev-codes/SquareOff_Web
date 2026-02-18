@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Linkedin, Instagram } from 'lucide-react';
-import { Logo } from '../ui/Logo';
 import algoryxLogo from '../../assets/Algoryx.jpeg';
+import logoCombined from '../../assets/FullLogo.jpeg';
 
 export const Footer: React.FC = () => {
     return (
@@ -14,7 +14,11 @@ export const Footer: React.FC = () => {
 
                     {/* Brand — logo + name only (no social here) */}
                     <div className="flex items-center shrink-0">
-                        <Logo variant="footer" />
+                        <img
+                            src={logoCombined}
+                            alt="Squareoff InvestTech"
+                            className="shrink-0 object-contain h-20 sm:h-24 md:h-28 w-auto max-w-[340px] sm:max-w-[420px] md:max-w-[500px]"
+                        />
                     </div>
 
                     {/* EXPLORE + CONNECT — two columns */}
