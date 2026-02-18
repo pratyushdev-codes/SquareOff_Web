@@ -71,7 +71,7 @@ export const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-lg font-bold mb-1">Contact Details</h4>
-                                        <p className="text-neutral-400 mb-1">Squareofftrades@gmail.com</p>
+                                        <p className="text-neutral-400 mb-1">squareofftrades@gmail.com</p>
                                         <p className="text-neutral-400">+91 98253 67896</p>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@ export const Contact: React.FC = () => {
 
                             {/* Quick Actions */}
                             <div className="mt-12 flex flex-wrap gap-4">
-                                <a href="mailto:Squareofftrades@gmail.com">
+                                <a href="mailto:squareofftrades@gmail.com">
                                     <Button variant="outline" size="sm">Email Us</Button>
                                 </a>
                                 <a href="tel:+919825367896">
