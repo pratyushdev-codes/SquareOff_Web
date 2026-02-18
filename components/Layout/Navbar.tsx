@@ -32,11 +32,11 @@ export const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed w-full z-[9998] transition-all duration-500 ${scrolled
-          ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md py-4 border-b border-neutral-200 dark:border-white/5 text-black dark:text-white shadow-sm dark:shadow-none'
-          : 'bg-transparent py-6 text-white dark:text-white' // Keep transparent nav text white on hero images usually
+        ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md py-4 border-b border-neutral-200 dark:border-white/5 text-black dark:text-white shadow-sm dark:shadow-none'
+        : 'bg-transparent py-6 text-white dark:text-white' // Keep transparent nav text white on hero images usually
         }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 xl:px-12">
+      <div className="max-w-[1800px] mx-auto px-6 lg:px-8 xl:px-12">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <NavLink to="/" className="group">

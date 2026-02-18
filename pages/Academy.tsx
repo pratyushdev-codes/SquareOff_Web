@@ -26,7 +26,7 @@ export const Academy: React.FC = () => {
             {/* Hero Section */}
             <div className="bg-black text-white pt-32 pb-24 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-neutral-800/30 via-black to-black"></div>
-                <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+                <div className="max-w-[1800px] mx-auto px-6 lg:px-8 relative z-10 text-center">
                     <motion.div
                         initial="initial"
                         animate="animate"
@@ -73,7 +73,7 @@ export const Academy: React.FC = () => {
 
             {/* About The Academy */}
             <AnimateSection>
-                <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
+                <section className="py-24 max-w-[1800px] mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-serif font-bold mb-6">About TradeCraft</h2>
@@ -102,7 +102,7 @@ export const Academy: React.FC = () => {
             {/* Why Join Us? */}
             <AnimateSection>
                 <section className="py-24 bg-neutral-950 text-white">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
                         <div className="text-center mb-16">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-serif font-bold mb-4">Why Join Us?</h2>
                             <p className="text-neutral-400">A curriculum designed for the modern market.</p>
@@ -154,7 +154,7 @@ export const Academy: React.FC = () => {
 
             {/* What We Offer */}
             <AnimateSection>
-                <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8 overflow-visible">
+                <section className="py-24 max-w-[1800px] mx-auto px-6 lg:px-8 overflow-visible">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                         <div>
                             <span className="text-neutral-500 uppercase tracking-widest text-sm font-bold mb-2 block">The Experience</span>

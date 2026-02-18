@@ -63,7 +63,7 @@ export const StartInvesting: React.FC = () => {
     <div className="pt-24 bg-black text-white min-h-screen">
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 text-center">
+      <div className="max-w-[1800px] mx-auto px-6 lg:px-8 py-16 text-center">
         <motion.div
           initial="initial"
           animate="animate"
@@ -131,7 +131,7 @@ export const StartInvesting: React.FC = () => {
       {/* Paid Consultation Block */}
       <AnimateSection>
         <section className="py-24 bg-white text-black">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6">Need a personalized roadmap?</h2>

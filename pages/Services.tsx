@@ -53,7 +53,7 @@ export const Services: React.FC = () => {
   return (
     <div className="pt-24 min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
+      <div className="max-w-[1800px] mx-auto px-6 lg:px-8 py-16 md:py-24">
         <motion.div
           initial="initial"
           animate="animate"

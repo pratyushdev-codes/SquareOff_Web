@@ -47,7 +47,7 @@ export const WhyIndia: React.FC = () => {
         <div className="pt-24 bg-black text-white min-h-screen">
 
             {/* Header Section */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
+            <div className="max-w-[1800px] mx-auto px-6 lg:px-8 py-16 md:py-24">
                 <motion.div
                     initial="initial"
                     animate="animate"
@@ -69,7 +69,7 @@ export const WhyIndia: React.FC = () => {
             {/* Key Statistics - Enhanced Animated Cards */}
             <AnimateSection>
                 <section className="bg-neutral-50 text-black py-24 border-y border-white/10">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                             {/* Stat Card 1 */}
@@ -152,7 +152,7 @@ export const WhyIndia: React.FC = () => {
             {/* Detailed Analysis Content Blocks */}
             <AnimateSection>
                 <section className="py-24">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-16 md:space-y-24 xl:space-y-32">
+                    <div className="max-w-[1800px] mx-auto px-6 lg:px-8 space-y-16 md:space-y-24 xl:space-y-32">
 
                         {/* Block 1: Growth Economy */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 xl:gap-20 items-center">
@@ -225,7 +225,7 @@ export const WhyIndia: React.FC = () => {
             {/* Strategic Advantage for Global Investors */}
             <AnimateSection>
                 <section className="bg-neutral-900 py-24 border-t border-white/10">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                    <div className="max-w-[1800px] mx-auto px-6 lg:px-8 text-center">
                         <Globe className="w-16 h-16 text-white mx-auto mb-8" />
                         <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6">The Canada-India Corridor</h2>
                         <p className="text-xl text-neutral-400 max-w-3xl mx-auto mb-12 leading-relaxed">

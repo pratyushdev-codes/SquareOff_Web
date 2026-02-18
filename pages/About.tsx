@@ -23,7 +23,7 @@ export const About: React.FC = () => {
     <div className="pt-24 bg-black text-white min-h-screen">
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div className="max-w-[1800px] mx-auto px-6 lg:px-8 py-16">
         <motion.div
           initial="initial"
           animate="animate"
@@ -44,7 +44,7 @@ export const About: React.FC = () => {
       {/* The Evolution Story */}
       <AnimateSection>
         <section className="py-24 bg-neutral-900/50 border-y border-white/5">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
                 <span className="text-neutral-500 uppercase tracking-[0.2em] text-sm mb-4 block">Our Journey</span>
@@ -76,7 +76,7 @@ export const About: React.FC = () => {
       {/* Mission & Vision */}
       <AnimateSection>
         <section className="py-24">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white text-black p-8 sm:p-10 md:p-14 xl:p-16 relative overflow-hidden group">
                 <div className="relative z-10">
@@ -111,7 +111,7 @@ export const About: React.FC = () => {
       {/* Core Values */}
       <AnimateSection>
         <section className="py-16">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <h2 className="text-3xl font-serif font-bold mb-12 border-b border-white/10 pb-6">Core Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="space-y-4 group">
@@ -151,7 +151,7 @@ export const About: React.FC = () => {
       {/* Founder Profile */}
       <AnimateSection>
         <section className="py-24 pb-40 bg-white text-black mt-16">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="gap-16 items-center">
               {/* Left Column: Text */}
               <div className="order-2 lg:order-1">

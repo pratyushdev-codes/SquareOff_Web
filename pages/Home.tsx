@@ -33,7 +33,7 @@ export const Home: React.FC = () => {
         />
         {/* Background gradient adjustment for light/dark */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-200/50 via-white to-white dark:from-neutral-800/20 dark:via-black dark:to-black"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-[1800px] mx-auto px-6 text-center">
           <motion.div
             initial="initial"
             animate="animate"
@@ -65,7 +65,7 @@ export const Home: React.FC = () => {
       {/* Value Proposition */}
       <AnimateSection>
         <section className="py-24 bg-neutral-100 dark:bg-white text-black">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 xl:gap-16">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-black text-white flex items-center justify-center rounded-full mb-4">
@@ -102,7 +102,7 @@ export const Home: React.FC = () => {
       {/* Introduction */}
       <AnimateSection>
         <section className="py-20 md:py-32 xl:py-40 border-t border-neutral-200 dark:border-white/10">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div className="flex flex-col justify-center h-full">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-8 font-serif">From Traders <br />to <span className="text-neutral-500"><span className="text-green-500">I</span>nvest<span className="text-red-500">T</span>ech</span></h2>

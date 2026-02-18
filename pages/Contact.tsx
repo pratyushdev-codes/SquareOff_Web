@@ -24,7 +24,7 @@ export const Contact: React.FC = () => {
 
     return (
         <div className="pt-24 bg-black text-white min-h-screen">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <div className="max-w-[1800px] mx-auto px-6 lg:px-8 py-16">
                 <AnimateSection>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 xl:gap-32">
                         {/* Info Side */}

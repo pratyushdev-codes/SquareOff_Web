@@ -7,7 +7,7 @@ import algoryxLogo from '../../assets/Algoryx.jpeg';
 export const Footer: React.FC = () => {
     return (
         <footer className="relative z-10 bg-black text-white pt-20 border-t border-white/10 min-h-[320px] pb-[max(6rem,env(safe-area-inset-bottom,0px))] md:pb-10">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 xl:px-12">
+            <div className="max-w-[1800px] mx-auto px-6 lg:px-8 xl:px-12">
 
                 {/* Top Section: Brand + Links + Locations — matches reference layout */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 mb-16">
