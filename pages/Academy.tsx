@@ -234,7 +234,7 @@ export const Academy: React.FC = () => {
                                 <div className="space-y-6 text-sm text-neutral-600">
                                     <div className="flex items-start">
                                         <MapPin className="w-5 h-5 text-neutral-800 mr-3 shrink-0" />
-                                        <span>UL-15 Arjun Tower, Shivranjani Crossroads, Satellite, Ahmedabad-15</span>
+                                        <span>UL-15 Arjun Tower, Shivranjani Cross Roads, Satellite, Ahmedabad - 380015</span>
                                     </div>
                                     <div className="flex items-center">
                                         <Phone className="w-5 h-5 text-neutral-800 mr-3 shrink-0" />

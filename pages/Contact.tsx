@@ -45,8 +45,8 @@ export const Contact: React.FC = () => {
                                         <h4 className="text-lg font-bold mb-1">India HQ</h4>
                                         <p className="text-neutral-400 leading-relaxed">
                                             UL-15 Arjun Tower,<br />
-                                            Shivranjani Cross Roads,<br />
-                                            Ahmedabad - 15
+                                            Shivranjani Cross Roads, Satellite,<br />
+                                            Ahmedabad - 380015
                                         </p>
                                     </div>
                                 </div>
