@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../components/ui/Button';
 import { UserPlus, ShieldCheck, FileText, Target, Wallet, Zap, BarChart2, ArrowRight, Calendar } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { AnimateSection } from '../components/AnimateSection';
 import servicesImage from '../assets/partners.jpg';
@@ -51,6 +51,7 @@ const fadeInUp = {
 };
 
 const stagger = {
+  initial: {},
   animate: {
     transition: {
       staggerChildren: 0.1
@@ -58,21 +59,59 @@ const stagger = {
   }
 };
 
+const wordReveal = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.3 + i * 0.08, duration: 0.4 }
+  })
+};
+
 export const StartInvesting: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const parallaxY = useTransform(scrollYProgress, [0.2, 0.5], [80, -40]);
   return (
     <div className="pt-24 bg-black text-white min-h-screen">
 
-      {/* Hero Section */}
+      {/* Hero Section - animations run when you scroll to this section */}
       <div className="max-w-[1800px] mx-auto px-6 lg:px-8 py-16 text-center">
         <motion.div
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.3 }}
           variants={stagger}
           className="max-w-4xl mx-auto"
         >
-          <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-bold font-serif mb-6">
-            Begin Your <br /> Wealth Journey
-          </motion.h1>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-bold font-serif mb-6 overflow-hidden">
+            <motion.span
+              className="inline-block"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+            >
+              {['Begin', 'Your'].map((word, i) => (
+                <motion.span key={word} variants={wordReveal} custom={i} className="inline-block mr-[0.25em]">
+                  {word}
+                </motion.span>
+              ))}
+            </motion.span>
+            <br />
+            <motion.span
+              className="inline-block"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+            >
+              {['Wealth', 'Journey'].map((word, i) => (
+                <motion.span key={word} variants={wordReveal} custom={i + 2} className="inline-block mr-[0.25em]">
+                  {word}
+                </motion.span>
+              ))}
+            </motion.span>
+          </h1>
           <motion.p variants={fadeInUp} className="text-lg sm:text-xl xl:text-2xl text-neutral-400 mb-8 max-w-2xl xl:max-w-3xl mx-auto leading-relaxed">
             Institutional-grade strategies, now accessible to everyone. <br />
             <span className="text-white font-semibold">No minimum capital required.</span>
@@ -88,8 +127,24 @@ export const StartInvesting: React.FC = () => {
         <section className="py-24 border-t border-white/10">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <div className="mb-16 text-center">
-              <h2 className="text-3xl font-serif font-bold mb-4">How It Works</h2>
-              <p className="text-neutral-500">A seamless path from onboarding to execution.</p>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-3xl font-serif font-bold mb-4"
+              >
+                How It Works
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-neutral-500"
+              >
+                A seamless path from onboarding to execution.
+              </motion.p>
             </div>
 
             <div className="space-y-12 relative">
@@ -134,10 +189,24 @@ export const StartInvesting: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6">Need a personalized roadmap?</h2>
-                <p className="text-xl text-neutral-600 mb-8 leading-relaxed">
+                <motion.h2
+                  initial={{ opacity: 0, x: -24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6"
+                >
+                  Need a personalized roadmap?
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, x: -24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="text-xl text-neutral-600 mb-8 leading-relaxed"
+                >
                   Before executing, you may want a deep-dive into your financial health. Book a paid consultation with our senior strategy team.
-                </p>
+                </motion.p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center text-neutral-700">
                     <Calendar className="w-5 h-5 mr-3" />
@@ -152,7 +221,7 @@ export const StartInvesting: React.FC = () => {
                   Book Consultation <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
-              <div className="relative h-[300px] sm:h-[350px] md:h-[400px] xl:h-[500px] bg-neutral-100 p-8 flex items-center justify-center border border-black/10">
+              <motion.div style={{ y: parallaxY }} className="relative h-[300px] sm:h-[350px] md:h-[400px] xl:h-[500px] bg-neutral-100 p-8 flex items-center justify-center border border-black/10">
                 <div className="text-center">
                   <h3 className="text-9xl font-serif font-bold text-neutral-200">?</h3>
                 </div>
@@ -160,7 +229,7 @@ export const StartInvesting: React.FC = () => {
                   <img src={servicesImage} alt="Squareoff InvestTech" className="w-full h-full object-cover" />
 
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -170,10 +239,24 @@ export const StartInvesting: React.FC = () => {
       <AnimateSection>
         <section className="py-24 bg-neutral-900 text-center">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="text-3xl font-bold mb-6">Ready to professionalize your portfolio?</h2>
-            <p className="text-neutral-400 mb-8">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-bold mb-6"
+            >
+              Ready to professionalize your portfolio?
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="text-neutral-400 mb-8"
+            >
               Whether you have ₹5,000 or ₹5 Crore, our process remains the same: Disciplined. Data-driven. Transparent.
-            </p>
+            </motion.p>
             <NavLink to="/contact">
               <Button variant="primary" size="lg" className="w-full md:w-auto">
                 Create Account & Start Investing

@@ -73,7 +73,13 @@ export const WhyIndia: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                             {/* Stat Card 1 */}
-                            <div className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                            <motion.div
+                                initial={{ opacity: 0, y: 28 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-20px' }}
+                                transition={{ duration: 0.5, delay: 0 }}
+                                className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
+                            >
                                 <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-700">
                                     <TrendingUp size={120} />
                                 </div>
@@ -88,10 +94,16 @@ export const WhyIndia: React.FC = () => {
                                     <div className="h-px w-12 bg-neutral-200 my-4"></div>
                                     <p className="text-xs text-neutral-500 leading-relaxed font-medium">Outperforming global markets (~12%)</p>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Stat Card 2 */}
-                            <div className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                            <motion.div
+                                initial={{ opacity: 0, y: 28 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-20px' }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
+                            >
                                 <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-700">
                                     <Coins size={120} />
                                 </div>
@@ -106,10 +118,16 @@ export const WhyIndia: React.FC = () => {
                                     <div className="h-px w-12 bg-neutral-200 my-4"></div>
                                     <p className="text-xs text-neutral-500 leading-relaxed font-medium">Ranked 4th largest globally</p>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Stat Card 3 */}
-                            <div className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                            <motion.div
+                                initial={{ opacity: 0, y: 28 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-20px' }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
+                            >
                                 <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-700">
                                     <Building2 size={120} />
                                 </div>
@@ -124,10 +142,16 @@ export const WhyIndia: React.FC = () => {
                                     <div className="h-px w-12 bg-neutral-200 my-4"></div>
                                     <p className="text-xs text-neutral-500 leading-relaxed font-medium">Available on National Stock Exchange</p>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Stat Card 4 */}
-                            <div className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                            <motion.div
+                                initial={{ opacity: 0, y: 28 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-20px' }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                                className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
+                            >
                                 <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-700">
                                     <Users size={120} />
                                 </div>
@@ -142,7 +166,7 @@ export const WhyIndia: React.FC = () => {
                                     <div className="h-px w-12 bg-neutral-200 my-4"></div>
                                     <p className="text-xs text-neutral-500 leading-relaxed font-medium">Rapidly growing domestic participation</p>
                                 </div>
-                            </div>
+                            </motion.div>
 
                         </div>
                     </div>
@@ -156,7 +180,13 @@ export const WhyIndia: React.FC = () => {
 
                         {/* Block 1: Growth Economy */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 xl:gap-20 items-center">
-                            <div className="order-2 lg:order-1 relative">
+                            <motion.div
+                                className="order-2 lg:order-1 relative"
+                                initial={{ opacity: 0, x: -36 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true, margin: '-60px' }}
+                                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            >
                                 <div className="bg-neutral-900 p-8 md:p-12 rounded-sm border border-white/10">
                                     <BarChart3 className="w-12 h-12 text-white mb-6" />
                                     <h3 className="text-2xl font-bold mb-4">Outperformance is the Norm</h3>
@@ -169,8 +199,14 @@ export const WhyIndia: React.FC = () => {
                                 </div>
                                 {/* Decorative element */}
                                 <div className="absolute -z-10 top-4 -left-4 w-full h-full border border-white/20"></div>
-                            </div>
-                            <div className="order-1 lg:order-2">
+                            </motion.div>
+                            <motion.div
+                                className="order-1 lg:order-2"
+                                initial={{ opacity: 0, x: 36 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true, margin: '-60px' }}
+                                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            >
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6">A Structural Growth Story</h2>
                                 <p className="text-xl text-neutral-300 leading-relaxed mb-6">
                                     This isn't just a cyclical upswing. The market cap-to-GDP ratio is at 15-year highs, reflecting a fundamental shift where equity value is growing faster than the broader economy.
@@ -178,12 +214,17 @@ export const WhyIndia: React.FC = () => {
                                 <p className="text-neutral-400 leading-relaxed">
                                     With over 2,600 listed companies, investors can build truly diversified portfolios across high-growth sectors like Technology, Healthcare, Finance, and Consumer Goods.
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
 
                         {/* Block 2: Ecosystem & Demographics */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 xl:gap-20 items-center">
-                            <div>
+                            <motion.div
+                                initial={{ opacity: 0, x: -36 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true, margin: '-60px' }}
+                                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            >
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6">Demographics & Digital Infrastructure</h2>
                                 <p className="text-xl text-neutral-300 leading-relaxed mb-6">
                                     India is home to a young, aspirational population that is rapidly digitizing.
@@ -204,8 +245,14 @@ export const WhyIndia: React.FC = () => {
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
-                            <div className="relative">
+                            </motion.div>
+                            <motion.div
+                                className="relative"
+                                initial={{ opacity: 0, x: 36 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true, margin: '-60px' }}
+                                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            >
                                 <div className="bg-white text-black p-8 md:p-12 rounded-sm">
                                     <h3 className="text-3xl font-serif font-bold mb-6">The Regulation Advantage</h3>
                                     <p className="text-neutral-600 mb-6 leading-relaxed">
@@ -216,7 +263,7 @@ export const WhyIndia: React.FC = () => {
                                     </p>
                                 </div>
                                 <div className="absolute -z-10 bottom-4 -right-4 w-full h-full border border-white/20"></div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </section>
@@ -233,18 +280,36 @@ export const WhyIndia: React.FC = () => {
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto mb-16">
-                            <div className="border border-white/10 p-8 bg-black">
+                            <motion.div
+                                className="border border-white/10 p-8 bg-black"
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-40px' }}
+                                transition={{ duration: 0.5, delay: 0 }}
+                            >
                                 <h3 className="text-xl font-bold mb-4">Currency Diversification</h3>
                                 <p className="text-neutral-500">Hedge against local currency stagnation by gaining exposure to a high-growth Rupee economy.</p>
-                            </div>
-                            <div className="border border-white/10 p-8 bg-black">
+                            </motion.div>
+                            <motion.div
+                                className="border border-white/10 p-8 bg-black"
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-40px' }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                            >
                                 <h3 className="text-xl font-bold mb-4">Boots on the Ground</h3>
                                 <p className="text-neutral-500">We don't just allocate from afar. Our research teams in Mumbai provide real-time, on-ground insights.</p>
-                            </div>
-                            <div className="border border-white/10 p-8 bg-black">
+                            </motion.div>
+                            <motion.div
+                                className="border border-white/10 p-8 bg-black"
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-40px' }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                            >
                                 <h3 className="text-xl font-bold mb-4">Seamless Execution</h3>
                                 <p className="text-neutral-500">We handle the complexity of asset allocation so you can focus on the returns.</p>
-                            </div>
+                            </motion.div>
                         </div>
 
                         <NavLink to="/contact">
