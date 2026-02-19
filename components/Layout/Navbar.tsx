@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Button';
@@ -41,65 +40,6 @@ export const Navbar: React.FC = () => {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
-
-  // Mobile menu overlay rendered via portal so it escapes the nav stacking context
-  const mobileMenuOverlay = isOpen
-    ? ReactDOM.createPortal(
-      <div
-        className="fixed inset-0 md:hidden"
-        style={{ zIndex: 99999 }}
-        aria-hidden={!isOpen}
-      >
-        {/* Solid backdrop - fully opaque to hide page content */}
-        <div className="absolute inset-0 bg-white dark:bg-black" />
-
-        {/* Menu content */}
-        <div className="relative flex flex-col h-full w-full text-black dark:text-white">
-          {/* Header bar with logo and close button */}
-          <div className="flex justify-between items-center px-6 py-4">
-            <NavLink to="/" onClick={() => setIsOpen(false)}>
-              <Logo variant="navbar" className="text-black dark:text-white" />
-            </NavLink>
-            <button
-              className="p-2 -m-2"
-              onClick={() => setIsOpen(false)}
-              aria-label="Close menu"
-            >
-              <X size={24} />
-            </button>
-          </div>
-
-          {/* Nav links */}
-          <div className="flex flex-col space-y-6 px-8 pt-8">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  `text-2xl font-light ${isActive ? 'font-medium' : 'opacity-70'}`
-                }
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </NavLink>
-            ))}
-            <div className="h-px bg-neutral-200 dark:bg-neutral-800 my-4" />
-            <NavLink to="/contact" className="text-xl" onClick={() => setIsOpen(false)}>
-              Contact Us
-            </NavLink>
-            <NavLink
-              to="/start-investing"
-              className="flex items-center text-xl"
-              onClick={() => setIsOpen(false)}
-            >
-              Start Investing <ArrowRight className="ml-2 w-5 h-5" />
-            </NavLink>
-          </div>
-        </div>
-      </div>,
-      document.body
-    )
-    : null;
 
   return (
     <>
@@ -145,8 +85,8 @@ export const Navbar: React.FC = () => {
               </NavLink>
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="flex items-center gap-4 md:hidden relative" style={{ zIndex: 99998 }}>
+            {/* Mobile Menu Button - hamburger icon */}
+            <div className="flex items-center gap-4 md:hidden">
               <button
                 className="p-2 -m-2"
                 onClick={() => setIsOpen(!isOpen)}
@@ -159,8 +99,61 @@ export const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      {/* Mobile overlay via portal */}
-      {mobileMenuOverlay}
+      {/* Mobile Menu Overlay — rendered as sibling of <nav>, NOT inside it.
+           Uses inline style for z-index to guarantee it beats everything (CustomCursor z-[9999], nav z-[9998], etc.) */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 md:hidden"
+          style={{ zIndex: 100000 }}
+        >
+          {/* Fully opaque backdrop */}
+          <div className="absolute inset-0 bg-white dark:bg-black" />
+
+          {/* Menu content */}
+          <div className="relative flex flex-col h-full w-full text-black dark:text-white">
+            {/* Top bar: logo + close button */}
+            <div className="flex justify-between items-center px-6 py-4">
+              <NavLink to="/" onClick={() => setIsOpen(false)}>
+                <Logo variant="navbar" className="text-black dark:text-white" />
+              </NavLink>
+              <button
+                className="p-2 -m-2"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            {/* Navigation links */}
+            <div className="flex flex-col space-y-6 px-8 pt-8">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `text-2xl font-light ${isActive ? 'font-medium' : 'opacity-70'}`
+                  }
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              <div className="h-px bg-neutral-200 dark:bg-neutral-800 my-4" />
+              <NavLink to="/contact" className="text-xl" onClick={() => setIsOpen(false)}>
+                Contact Us
+              </NavLink>
+              <NavLink
+                to="/start-investing"
+                className="flex items-center text-xl"
+                onClick={() => setIsOpen(false)}
+              >
+                Start Investing <ArrowRight className="ml-2 w-5 h-5" />
+              </NavLink>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
