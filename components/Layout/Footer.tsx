@@ -12,13 +12,14 @@ export const Footer: React.FC = () => {
                 {/* Top Section: Brand + Links + Locations — matches reference layout */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 mb-16">
 
-                    {/* Brand — logo + name only (no social here) */}
-                    <div className="flex items-center shrink-0">
+                    {/* Brand — logo + name + MSME badge */}
+                    <div className="flex flex-col shrink-0">
                         <img
                             src={logoCombined}
                             alt="Squareoff InvestTech"
                             className="shrink-0 object-contain h-20 sm:h-24 md:h-28 w-auto max-w-[340px] sm:max-w-[420px] md:max-w-[500px]"
                         />
+                        <span className="mt-2 text-xs tracking-widest uppercase text-neutral-400 font-semibold">MSME Registered</span>
                     </div>
 
                     {/* EXPLORE + CONNECT — two columns */}
