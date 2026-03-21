@@ -25,10 +25,14 @@ export const Contact: React.FC = () => {
     return (
         <div className="pt-24 bg-black text-white min-h-screen">
             <div className="max-w-[1800px] mx-auto px-6 lg:px-8 py-16">
-                <AnimateSection>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 xl:gap-32">
                         {/* Info Side */}
-                        <div>
+                        <motion.div
+                            initial={{ opacity: 0, x: -50, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                            viewport={{ once: false, margin: '-60px' }}
+                            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                        >
                             <span className="text-green-500 font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Get in Touch</span>
                             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold font-serif mb-8">Connect with Our Advisors</h1>
                             <p className="text-lg sm:text-xl xl:text-xl text-neutral-400 mb-12 leading-relaxed">
@@ -36,46 +40,43 @@ export const Contact: React.FC = () => {
                             </p>
 
                             <div className="space-y-10">
-                                {/* India Office */}
-                                <div className="flex items-start space-x-6">
-                                    <div className="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10">
-                                        <MapPin className="w-5 h-5 text-white" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold mb-1">India HQ</h4>
-                                        <p className="text-neutral-400 leading-relaxed">
-                                            UL-15 Arjun Tower,<br />
-                                            Shivranjani Cross Roads, Satellite,<br />
-                                            Ahmedabad - 380015
-                                        </p>
-                                    </div>
-                                </div>
-
-                                {/* Canada Office */}
-                                <div className="flex items-start space-x-6">
-                                    <div className="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10">
-                                        <Phone className="w-5 h-5 text-white" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold mb-1">Canada Office</h4>
-                                        <p className="text-neutral-400 leading-relaxed">
-                                            +1 (437) 559-7909
-                                        </p>
-                                    </div>
-                                </div>
-
-                                {/* Contacts */}
-                                <div className="flex items-start space-x-6">
-                                    <div className="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10">
-                                        <Mail className="w-5 h-5 text-white" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold mb-1">Contact Details</h4>
-                                        <p className="text-neutral-400 mb-1">squareofftrades@gmail.com</p>
-                                        <p className="text-neutral-400">+91 98253 67896</p>
-                                    </div>
-                                </div>
+                                {[
+                                    {
+                                        icon: <MapPin className="w-5 h-5 text-white" />,
+                                        title: 'India HQ',
+                                        content: <>UL-15 Arjun Tower,<br />Shivranjani Cross Roads, Satellite,<br />Ahmedabad - 380015</>
+                                    },
+                                    {
+                                        icon: <Phone className="w-5 h-5 text-white" />,
+                                        title: 'Canada Office',
+                                        content: '+1 (437) 559-7909'
+                                    },
+                                    {
+                                        icon: <Mail className="w-5 h-5 text-white" />,
+                                        title: 'Contact Details',
+                                        content: <><span className="block">squareofftrades@gmail.com</span><span>+91 98253 67896</span></>
+                                    }
+                                ].map((item, i) => (
+                                    <motion.div
+                                        key={item.title}
+                                        className="flex items-start space-x-6"
+                                        initial={{ opacity: 0, y: 24, filter: 'blur(4px)' }}
+                                        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                        viewport={{ once: false, margin: '-20px' }}
+                                        transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                                    >
+                                        <div className="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10">
+                                            {item.icon}
+                                        </div>
+                                        <div>
+                                            <h4 className="text-lg font-bold mb-1">{item.title}</h4>
+                                            <p className="text-neutral-400 leading-relaxed">{item.content}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
                             </div>
+
+
 
                             {/* Quick Actions */}
                             <div className="mt-12 flex flex-wrap gap-4">
@@ -93,10 +94,16 @@ export const Contact: React.FC = () => {
                                     <Button variant="outline" size="sm">WhatsApp</Button>
                                 </a>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Form Side */}
-                        <div className="bg-neutral-950 border border-white/10 p-6 sm:p-8 md:p-10 xl:p-14 relative overflow-hidden">
+                        <motion.div
+                            className="bg-neutral-950 border border-white/10 p-6 sm:p-8 md:p-10 xl:p-14 relative overflow-hidden"
+                            initial={{ opacity: 0, x: 50, scale: 0.95, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' }}
+                            viewport={{ once: false, margin: '-60px' }}
+                            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        >
                             <AnimatePresence mode="wait">
                                 {isSuccess ? (
                                     <motion.div
@@ -202,9 +209,8 @@ export const Contact: React.FC = () => {
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-                        </div>
+                        </motion.div>
                     </div>
-                </AnimateSection>
             </div>
         </div>
     );

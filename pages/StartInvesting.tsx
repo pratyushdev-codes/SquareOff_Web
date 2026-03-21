@@ -4,6 +4,7 @@ import { UserPlus, ShieldCheck, FileText, Target, Wallet, Zap, BarChart2, ArrowR
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { AnimateSection } from '../components/AnimateSection';
+import { ScrollIndicator } from '../components/ScrollIndicator';
 import servicesImage from '../assets/partners.jpg';
 
 const steps = [
@@ -79,7 +80,7 @@ export const StartInvesting: React.FC = () => {
         <motion.div
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           variants={stagger}
           className="max-w-4xl mx-auto"
         >
@@ -88,7 +89,7 @@ export const StartInvesting: React.FC = () => {
               className="inline-block"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
             >
               {['Begin', 'Your'].map((word, i) => (
@@ -102,7 +103,7 @@ export const StartInvesting: React.FC = () => {
               className="inline-block"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
             >
               {['Wealth', 'Journey'].map((word, i) => (
@@ -120,6 +121,9 @@ export const StartInvesting: React.FC = () => {
             <Button variant="primary" size="lg">Get Started Now</Button>
           </motion.div>
         </motion.div>
+        <div className="mt-12 flex justify-center">
+          <ScrollIndicator />
+        </div>
       </div>
 
       {/* The Process Timeline */}
@@ -130,7 +134,7 @@ export const StartInvesting: React.FC = () => {
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5 }}
                 className="text-3xl font-serif font-bold mb-4"
               >
@@ -139,7 +143,7 @@ export const StartInvesting: React.FC = () => {
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-neutral-500"
               >
@@ -156,7 +160,7 @@ export const StartInvesting: React.FC = () => {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ delay: index * 0.1 }}
                   className={`relative flex items-start md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 >
@@ -192,7 +196,7 @@ export const StartInvesting: React.FC = () => {
                 <motion.h2
                   initial={{ opacity: 0, x: -24 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 0.5 }}
                   className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6"
                 >
@@ -201,7 +205,7 @@ export const StartInvesting: React.FC = () => {
                 <motion.p
                   initial={{ opacity: 0, x: -24 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="text-xl text-neutral-600 mb-8 leading-relaxed"
                 >
@@ -242,7 +246,7 @@ export const StartInvesting: React.FC = () => {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.5 }}
               className="text-3xl font-bold mb-6"
             >
@@ -251,7 +255,7 @@ export const StartInvesting: React.FC = () => {
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.15 }}
               className="text-neutral-400 mb-8"
             >

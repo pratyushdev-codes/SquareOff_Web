@@ -4,6 +4,7 @@ import { Button } from '../components/ui/Button';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { AnimateSection } from '../components/AnimateSection';
+import { ScrollIndicator } from '../components/ScrollIndicator';
 import tradecraftLogoImage from '../assets/tradecraft-logo.png.jpeg';
 
 const fadeInUp = {
@@ -50,6 +51,9 @@ export const Academy: React.FC = () => {
                         </motion.div>
                     </motion.div>
                 </div>
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+                    <ScrollIndicator />
+                </div>
             </div>
 
             {/* Introduction Section */}
@@ -75,7 +79,12 @@ export const Academy: React.FC = () => {
             <AnimateSection>
                 <section className="py-24 max-w-[1800px] mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div>
+                        <motion.div
+                            initial={{ opacity: 0, x: -50, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                            viewport={{ once: false, margin: '-60px' }}
+                            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                        >
                             <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-serif font-bold mb-6">About TradeCraft</h2>
                             <div className="w-20 h-1 bg-black mb-8"></div>
                             <p className="text-lg text-neutral-600 leading-relaxed mb-6">
@@ -87,14 +96,20 @@ export const Academy: React.FC = () => {
                             <p className="text-neutral-800 font-medium italic">
                                 "Dedicated to providing the knowledge and tools needed for success in the dynamic world of trading."
                             </p>
-                        </div>
-                        <div className="p-8 rounded-lg border border-neutral-200">
+                        </motion.div>
+                        <motion.div
+                            className="p-8 rounded-lg border border-neutral-200"
+                            initial={{ opacity: 0, x: 50, scale: 0.95, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' }}
+                            viewport={{ once: false, margin: '-60px' }}
+                            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                        >
                             <img
                                 src={tradecraftLogoImage}
                                 alt="Technical Charts"
                                 className="w-full h-auto rounded shadow-sm opacity-90"
                             />
-                        </div>
+                        </motion.div>
                     </div>
                 </section>
             </AnimateSection>
@@ -119,34 +134,25 @@ export const Academy: React.FC = () => {
 
                         {/* Other Feature Cards */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 xl:gap-10">
-                            <div className="bg-neutral-900 p-8 border border-white/10 hover:border-white/30 transition-colors">
-                                <TrendingUp className="w-10 h-10 text-green-500 mb-6" />
-                                <h3 className="text-xl font-bold mb-3">Comprehensive Price Action</h3>
-                                <p className="text-neutral-400 text-sm leading-relaxed">
-                                    One complete course that teaches trading strategies for all global markets including stocks, forex, and crypto.
-                                </p>
-                            </div>
-                            <div className="bg-neutral-900 p-8 border border-white/10 hover:border-white/30 transition-colors">
-                                <Zap className="w-10 h-10 text-yellow-500 mb-6" />
-                                <h3 className="text-xl font-bold mb-3">Intraday Trading Focus</h3>
-                                <p className="text-neutral-400 text-sm leading-relaxed">
-                                    Master the art of intraday trading with real-time chart analysis and actionable techniques.
-                                </p>
-                            </div>
-                            <div className="bg-neutral-900 p-8 border border-white/10 hover:border-white/30 transition-colors">
-                                <BookOpen className="w-10 h-10 text-blue-500 mb-6" />
-                                <h3 className="text-xl font-bold mb-3">Raw, Practical Education</h3>
-                                <p className="text-neutral-400 text-sm leading-relaxed">
-                                    Learn directly from charts with examples, ensuring practical knowledge rather than just theory.
-                                </p>
-                            </div>
-                            <div className="bg-neutral-900 p-8 border border-white/10 hover:border-white/30 transition-colors">
-                                <Clock className="w-10 h-10 text-purple-500 mb-6" />
-                                <h3 className="text-xl font-bold mb-3">22 Session Curriculum</h3>
-                                <p className="text-neutral-400 text-sm leading-relaxed">
-                                    A comprehensive, 1.5-hour per session training program that covers everything you need to know.
-                                </p>
-                            </div>
+                            {[
+                                { icon: <TrendingUp className="w-10 h-10 text-green-500 mb-6" />, title: 'Comprehensive Price Action', desc: 'One complete course that teaches trading strategies for all global markets including stocks, forex, and crypto.' },
+                                { icon: <Zap className="w-10 h-10 text-yellow-500 mb-6" />, title: 'Intraday Trading Focus', desc: 'Master the art of intraday trading with real-time chart analysis and actionable techniques.' },
+                                { icon: <BookOpen className="w-10 h-10 text-blue-500 mb-6" />, title: 'Raw, Practical Education', desc: 'Learn directly from charts with examples, ensuring practical knowledge rather than just theory.' },
+                                { icon: <Clock className="w-10 h-10 text-purple-500 mb-6" />, title: '22 Session Curriculum', desc: 'A comprehensive, 1.5-hour per session training program that covers everything you need to know.' },
+                            ].map((card, i) => (
+                                <motion.div
+                                    key={card.title}
+                                    initial={{ opacity: 0, y: 32, scale: 0.95, filter: 'blur(6px)' }}
+                                    whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                                    viewport={{ once: false, margin: '-30px' }}
+                                    transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                                    className="bg-neutral-900 p-8 border border-white/10 hover:border-white/30 transition-colors"
+                                >
+                                    {card.icon}
+                                    <h3 className="text-xl font-bold mb-3">{card.title}</h3>
+                                    <p className="text-neutral-400 text-sm leading-relaxed">{card.desc}</p>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </section>

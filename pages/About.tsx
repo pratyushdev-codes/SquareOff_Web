@@ -78,7 +78,13 @@ export const About: React.FC = () => {
         <section className="py-24">
           <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white text-black p-8 sm:p-10 md:p-14 xl:p-16 relative overflow-hidden group">
+              <motion.div
+                className="bg-white text-black p-8 sm:p-10 md:p-14 xl:p-16 relative overflow-hidden group"
+                initial={{ opacity: 0, x: -50, scale: 0.95, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' }}
+                viewport={{ once: false, margin: '-60px' }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="relative z-10">
                   <h3 className="text-sm font-bold uppercase tracking-widest mb-4 opacity-60">Our Mission</h3>
                   <h4 className="text-2xl sm:text-3xl xl:text-4xl font-serif font-bold mb-6">Where Smart Money Begins.</h4>
@@ -89,9 +95,15 @@ export const About: React.FC = () => {
                 <div className="absolute -bottom-10 -right-10 text-neutral-100 transform group-hover:scale-110 transition-transform duration-700">
                   <Anchor size={200} strokeWidth={0.5} />
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="bg-neutral-900 text-white p-8 sm:p-10 md:p-14 xl:p-16 border border-white/10 relative overflow-hidden group">
+              <motion.div
+                className="bg-neutral-900 text-white p-8 sm:p-10 md:p-14 xl:p-16 border border-white/10 relative overflow-hidden group"
+                initial={{ opacity: 0, x: 50, scale: 0.95, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' }}
+                viewport={{ once: false, margin: '-60px' }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="relative z-10">
                   <h3 className="text-sm font-bold uppercase tracking-widest mb-4 text-neutral-400">Our Vision</h3>
                   <h4 className="text-2xl sm:text-3xl xl:text-4xl font-serif font-bold mb-6">Global Leadership.</h4>
@@ -102,7 +114,7 @@ export const About: React.FC = () => {
                 <div className="absolute -bottom-10 -right-10 text-neutral-800 transform group-hover:scale-110 transition-transform duration-700">
                   <TrendingUp size={200} strokeWidth={0.5} />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -114,35 +126,26 @@ export const About: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <h2 className="text-3xl font-serif font-bold mb-12 border-b border-white/10 pb-6">Core Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="space-y-4 group">
-                <div className="w-12 h-12 border border-white/20 flex items-center justify-center rounded-full text-neutral-400 group-hover:text-white group-hover:border-white transition-colors">
-                  <Eye size={20} />
-                </div>
-                <h3 className="text-xl font-bold">Transparency</h3>
-                <p className="text-neutral-500 leading-relaxed">
-                  We believe in complete openness about our strategies, fees, and performance. No hidden clauses, just clear results.
-                </p>
-              </div>
-
-              <div className="space-y-4 group">
-                <div className="w-12 h-12 border border-white/20 flex items-center justify-center rounded-full text-neutral-400 group-hover:text-white group-hover:border-white transition-colors">
-                  <Shield size={20} />
-                </div>
-                <h3 className="text-xl font-bold">Risk Management</h3>
-                <p className="text-neutral-500 leading-relaxed">
-                  Protecting capital is our first priority. Our rigorous risk protocols ensure that we stay resilient in volatile markets.
-                </p>
-              </div>
-
-              <div className="space-y-4 group">
-                <div className="w-12 h-12 border border-white/20 flex items-center justify-center rounded-full text-neutral-400 group-hover:text-white group-hover:border-white transition-colors">
-                  <TrendingUp size={20} />
-                </div>
-                <h3 className="text-xl font-bold">Long-Term Growth</h3>
-                <p className="text-neutral-500 leading-relaxed">
-                  We ignore short-term noise to focus on structural wealth creation over decades, not days.
-                </p>
-              </div>
+              {[
+                { icon: <Eye size={20} />, title: 'Transparency', desc: 'We believe in complete openness about our strategies, fees, and performance. No hidden clauses, just clear results.' },
+                { icon: <Shield size={20} />, title: 'Risk Management', desc: 'Protecting capital is our first priority. Our rigorous risk protocols ensure that we stay resilient in volatile markets.' },
+                { icon: <TrendingUp size={20} />, title: 'Long-Term Growth', desc: 'We ignore short-term noise to focus on structural wealth creation over decades, not days.' },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 32, scale: 0.95, filter: 'blur(6px)' }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                  viewport={{ once: false, margin: '-40px' }}
+                  transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                  className="space-y-4 group"
+                >
+                  <div className="w-12 h-12 border border-white/20 flex items-center justify-center rounded-full text-neutral-400 group-hover:text-white group-hover:border-white transition-colors">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-neutral-500 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

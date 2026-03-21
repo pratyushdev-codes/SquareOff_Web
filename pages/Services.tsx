@@ -74,10 +74,10 @@ export const Services: React.FC = () => {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 32, scale: 0.95, filter: 'blur(6px)' }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                viewport={{ once: false }}
+                transition={{ delay: index * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className="group border border-white/10 bg-neutral-950 p-10 hover:bg-neutral-900 hover:border-white/30 transition-all duration-500 flex flex-col justify-between min-h-[320px]"
               >
                 <div>

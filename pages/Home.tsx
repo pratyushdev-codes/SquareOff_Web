@@ -5,6 +5,7 @@ import { Button } from '../components/ui/Button';
 import { motion } from 'framer-motion';
 import { MarketFeed } from '../components/MarketFeed';
 import { AnimateSection } from '../components/AnimateSection';
+import { ScrollIndicator } from '../components/ScrollIndicator';
 import backgroundImage from '../assets/background 3.jpg';
 
 const fadeInUp = {
@@ -59,6 +60,9 @@ export const Home: React.FC = () => {
               </NavLink>
             </motion.div>
           </motion.div>
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <ScrollIndicator />
+          </div>
         </div>
       </section>
 
@@ -67,33 +71,26 @@ export const Home: React.FC = () => {
         <section className="py-24 bg-neutral-100 dark:bg-white text-black">
           <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 xl:gap-16">
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-black text-white flex items-center justify-center rounded-full mb-4">
-                  <TrendingUp size={24} />
-                </div>
-                <h3 className="text-xl font-bold">Data-Driven Alpha</h3>
-                <p className="text-neutral-600 leading-relaxed">
-                  We don't guess. We analyze. Our algorithms process millions of data points to identify high-probability investment opportunities in the Indian markets.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-black text-white flex items-center justify-center rounded-full mb-4">
-                  <Globe size={24} />
-                </div>
-                <h3 className="text-xl font-bold">Cross-Border Expertise</h3>
-                <p className="text-neutral-600 leading-relaxed">
-                  With presence in Ahmedabad and Toronto, we offer a unique perspective for NRIs and global investors looking to tap into India's growth story.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-black text-white flex items-center justify-center rounded-full mb-4">
-                  <Shield size={24} />
-                </div>
-                <h3 className="text-xl font-bold">Risk First Approach</h3>
-                <p className="text-neutral-600 leading-relaxed">
-                  Capital preservation is our primary mandate. We employ rigorous risk management protocols typically reserved for hedge funds.
-                </p>
-              </div>
+              {[
+                { icon: <TrendingUp size={24} />, title: 'Data-Driven Alpha', desc: "We don't guess. We analyze. Our algorithms process millions of data points to identify high-probability investment opportunities in the Indian markets." },
+                { icon: <Globe size={24} />, title: 'Cross-Border Expertise', desc: 'With presence in Ahmedabad and Toronto, we offer a unique perspective for NRIs and global investors looking to tap into India\'s growth story.' },
+                { icon: <Shield size={24} />, title: 'Risk First Approach', desc: 'Capital preservation is our primary mandate. We employ rigorous risk management protocols typically reserved for hedge funds.' },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 32, scale: 0.95, filter: 'blur(6px)' }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                  viewport={{ once: false, margin: '-40px' }}
+                  transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                  className="space-y-4"
+                >
+                  <div className="w-12 h-12 bg-black text-white flex items-center justify-center rounded-full mb-4">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-neutral-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -104,7 +101,13 @@ export const Home: React.FC = () => {
         <section className="py-20 md:py-32 xl:py-40 border-t border-neutral-200 dark:border-white/10">
           <div className="max-w-[1800px] mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div className="flex flex-col justify-center h-full">
+              <motion.div
+                className="flex flex-col justify-center h-full"
+                initial={{ opacity: 0, x: -50, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                viewport={{ once: false, margin: '-60px' }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-8 font-serif">From Traders <br />to <span className="text-neutral-500"><span className="text-green-500">I</span>nvest<span className="text-red-500">T</span>ech</span></h2>
                 <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-6 leading-relaxed">
                   Formerly known as Squareoff Traders, we have evolved. Our journey began on the trading floor, executing high-frequency strategies. Today, as Squareoff InvestTech, we bring that same execution precision to long-term wealth creation.
@@ -122,13 +125,19 @@ export const Home: React.FC = () => {
                     <p className="font-serif text-xl font-bold italic text-black dark:text-white">"Discipline is the bridge between goals and accomplishment."</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="relative">
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: 50, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                viewport={{ once: false, margin: '-60px' }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="aspect-[4/5] max-h-[500px] lg:max-h-[600px] xl:max-h-[700px] bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden border border-neutral-200 dark:border-white/10 shadow-2xl relative z-10">
                   <MarketFeed />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>

@@ -4,6 +4,7 @@ import { Button } from '../components/ui/Button';
 import { TrendingUp, Users, Smartphone, Globe, ArrowRight, BarChart3, Building2, Coins, PieChart } from 'lucide-react';
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
 import { AnimateSection } from '../components/AnimateSection';
+import { ScrollIndicator } from '../components/ScrollIndicator';
 
 const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -23,7 +24,7 @@ const AnimatedCounter = ({ value, prefix = '', suffix = '', decimals = 0 }: { va
     const ref = useRef<HTMLSpanElement>(null);
     const motionValue = useMotionValue(0);
     const springValue = useSpring(motionValue, { damping: 30, stiffness: 60 });
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const isInView = useInView(ref, { once: false, margin: "-50px" });
 
     useEffect(() => {
         if (isInView) {
@@ -64,6 +65,9 @@ export const WhyIndia: React.FC = () => {
                         India is one of the fastest-growing markets in the world. With a digital-first economy and robust demographics, it offers structural growth that is becoming scarce in the developed world.
                     </motion.p>
                 </motion.div>
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+                    <ScrollIndicator />
+                </div>
             </div>
 
             {/* Key Statistics - Enhanced Animated Cards */}
@@ -76,7 +80,7 @@ export const WhyIndia: React.FC = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 28 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-20px' }}
+                                viewport={{ once: false, margin: '-20px' }}
                                 transition={{ duration: 0.5, delay: 0 }}
                                 className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
                             >
@@ -100,7 +104,7 @@ export const WhyIndia: React.FC = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 28 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-20px' }}
+                                viewport={{ once: false, margin: '-20px' }}
                                 transition={{ duration: 0.5, delay: 0.1 }}
                                 className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
                             >
@@ -124,7 +128,7 @@ export const WhyIndia: React.FC = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 28 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-20px' }}
+                                viewport={{ once: false, margin: '-20px' }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
                                 className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
                             >
@@ -148,7 +152,7 @@ export const WhyIndia: React.FC = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 28 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-20px' }}
+                                viewport={{ once: false, margin: '-20px' }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
                                 className="bg-white p-6 sm:p-8 xl:p-10 rounded-xl border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
                             >
@@ -184,7 +188,7 @@ export const WhyIndia: React.FC = () => {
                                 className="order-2 lg:order-1 relative"
                                 initial={{ opacity: 0, x: -36 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: '-60px' }}
+                                viewport={{ once: false, margin: '-60px' }}
                                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                             >
                                 <div className="bg-neutral-900 p-8 md:p-12 rounded-sm border border-white/10">
@@ -204,7 +208,7 @@ export const WhyIndia: React.FC = () => {
                                 className="order-1 lg:order-2"
                                 initial={{ opacity: 0, x: 36 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: '-60px' }}
+                                viewport={{ once: false, margin: '-60px' }}
                                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                             >
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6">A Structural Growth Story</h2>
@@ -222,7 +226,7 @@ export const WhyIndia: React.FC = () => {
                             <motion.div
                                 initial={{ opacity: 0, x: -36 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: '-60px' }}
+                                viewport={{ once: false, margin: '-60px' }}
                                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                             >
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-bold mb-6">Demographics & Digital Infrastructure</h2>
@@ -250,7 +254,7 @@ export const WhyIndia: React.FC = () => {
                                 className="relative"
                                 initial={{ opacity: 0, x: 36 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: '-60px' }}
+                                viewport={{ once: false, margin: '-60px' }}
                                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                             >
                                 <div className="bg-white text-black p-8 md:p-12 rounded-sm">
@@ -284,7 +288,7 @@ export const WhyIndia: React.FC = () => {
                                 className="border border-white/10 p-8 bg-black"
                                 initial={{ opacity: 0, y: 24 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-40px' }}
+                                viewport={{ once: false, margin: '-40px' }}
                                 transition={{ duration: 0.5, delay: 0 }}
                             >
                                 <h3 className="text-xl font-bold mb-4">Currency Diversification</h3>
@@ -294,7 +298,7 @@ export const WhyIndia: React.FC = () => {
                                 className="border border-white/10 p-8 bg-black"
                                 initial={{ opacity: 0, y: 24 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-40px' }}
+                                viewport={{ once: false, margin: '-40px' }}
                                 transition={{ duration: 0.5, delay: 0.1 }}
                             >
                                 <h3 className="text-xl font-bold mb-4">Boots on the Ground</h3>
@@ -304,7 +308,7 @@ export const WhyIndia: React.FC = () => {
                                 className="border border-white/10 p-8 bg-black"
                                 initial={{ opacity: 0, y: 24 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-40px' }}
+                                viewport={{ once: false, margin: '-40px' }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
                             >
                                 <h3 className="text-xl font-bold mb-4">Seamless Execution</h3>
