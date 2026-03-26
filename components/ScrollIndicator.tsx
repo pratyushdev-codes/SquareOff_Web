@@ -21,9 +21,6 @@ export const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({ className = ''
         window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' });
       }}
     >
-      <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-400">
-        Scroll
-      </span>
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{
