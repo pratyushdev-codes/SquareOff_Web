@@ -226,7 +226,7 @@ export const Academy: React.FC = () => {
                             </p>
 
                             <a
-                                href="https://www.instagram.com/tradecraftbysquareoff"
+                                href="https://www.instagram.com/learn.with.tradecraft?igsh=MXFuOTFvNHVobjVuaQ=="
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-lg font-bold hover:opacity-90 transition-opacity mb-8"
