@@ -84,9 +84,9 @@ export const StartInvesting: React.FC = () => {
           variants={stagger}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-bold font-serif mb-6 overflow-hidden">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-bold font-serif mb-6">
             <motion.span
-              className="inline-block"
+              className="inline-block overflow-hidden pb-2"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
@@ -100,7 +100,7 @@ export const StartInvesting: React.FC = () => {
             </motion.span>
             <br />
             <motion.span
-              className="inline-block"
+              className="inline-block overflow-hidden pb-2"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
