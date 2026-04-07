@@ -69,15 +69,11 @@ export const Services: React.FC = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <>
+        <AnimateSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 xl:gap-10 mb-32">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 32, scale: 0.95, filter: 'blur(6px)' }}
-                whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className="group border border-white/10 bg-neutral-950 p-10 hover:bg-neutral-900 hover:border-white/30 transition-all duration-500 flex flex-col justify-between min-h-[320px]"
               >
                 <div>
@@ -89,7 +85,7 @@ export const Services: React.FC = () => {
                     {service.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
 
             {/* CTA Card injected into grid for visual balance */}
@@ -105,7 +101,7 @@ export const Services: React.FC = () => {
               </NavLink>
             </div>
           </div>
-        </>
+        </AnimateSection>
 
         {/* Academy Promo */}
         <AnimateSection>
