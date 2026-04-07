@@ -5,7 +5,6 @@ import { Button } from '../components/ui/Button';
 import { motion } from 'framer-motion';
 import { MarketFeed } from '../components/MarketFeed';
 import { AnimateSection } from '../components/AnimateSection';
-import { ScrollIndicator } from '../components/ScrollIndicator';
 import backgroundImage from '../assets/background 3.jpg';
 
 const fadeInUp = {
@@ -60,9 +59,6 @@ export const Home: React.FC = () => {
               </NavLink>
             </motion.div>
           </motion.div>
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-            <ScrollIndicator />
-          </div>
         </div>
       </section>
 
